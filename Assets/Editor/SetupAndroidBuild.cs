@@ -1,12 +1,13 @@
 using UnityEditor;
 using UnityEngine;
-using System.IO;
 using System.Collections.Generic;
 
 public class SetupAndroidBuild
 {
     public static void Configure()
     {
+        Debug.Log("Configuration des paramètres Android...");
+        
         // Changement de plateforme vers Android
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
         
@@ -16,15 +17,14 @@ public class SetupAndroidBuild
         PlayerSettings.companyName = "Demo";
         PlayerSettings.productName = "CloudBeesDemo";
         
-        // Important : Désactiver le app bundle et configurer pour Gradle
+        // Configuration du build system
         EditorUserBuildSettings.buildAppBundle = false;
         EditorUserBuildSettings.androidBuildSystem = AndroidBuildSystem.Gradle;
         
-        // Activer le autographics API pour Android
+        // Configuration de l'API graphique
         PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
-        List<GraphicsDeviceType> devices = new List<GraphicsDeviceType>();
-        devices.Add(GraphicsDeviceType.OpenGLES3);
-        PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, devices.ToArray());
+        GraphicsDeviceType[] devices = { GraphicsDeviceType.OpenGLES3 };
+        PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, devices);
         
         // Configuration des scènes
         List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
@@ -38,7 +38,6 @@ public class SetupAndroidBuild
         // Sauvegarde des paramètres
         AssetDatabase.SaveAssets();
         
-        // Log pour confirmer la configuration
-        Debug.Log("Android build configuration completed");
+        Debug.Log("Configuration Android terminée");
     }
 }
