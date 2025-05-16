@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEditor.Build.Reporting; // Ajout pour BuildReport, BuildSummary et BuildResult
 
-public class BuildAndroid
+public class BuildScript
 {
     [MenuItem("Build/Android")]
     public static void Build()
