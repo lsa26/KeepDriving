@@ -1,66 +1,57 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Rendering; // Ajout pour GraphicsDeviceType
+using UnityEngine.Rendering;
 
 public class SetupAndroidBuild
 {
     public static void Configure()
     {
         Debug.Log("Configuration des paramètres Android...");
-        
+
         // Changement de plateforme vers Android
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
-        
-        // Configuration des paramètres Android
+
+        // Paramètres du projet
         PlayerSettings.Android.bundleVersionCode = 1;
         PlayerSettings.bundleVersion = "1.0";
         PlayerSettings.companyName = "Demo";
         PlayerSettings.productName = "CloudBeesDemo";
-        
-        // Configuration du build system
+
+        // Build system
         EditorUserBuildSettings.buildAppBundle = false;
         EditorUserBuildSettings.androidBuildSystem = AndroidBuildSystem.Gradle;
-        
-        // Configuration de l'API graphique
+
+        // API graphique
         PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
         GraphicsDeviceType[] devices = { GraphicsDeviceType.OpenGLES3 };
         PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, devices);
-        
-        // Configuration des scènes avec tri pour prioriser la scène principale
+
+        // Scènes
+        string menuScenePath = "Assets/Scenes/Menu.unity"; // Mets ici le vrai chemin si nécessaire
         List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
-        string mainScenePath = null;
-        List<EditorBuildSettingsScene> otherScenes = new List<EditorBuildSettingsScene>();
-        
+
+        if (System.IO.File.Exists(menuScenePath))
+        {
+            scenes.Add(new EditorBuildSettingsScene(menuScenePath, true));
+        }
+        else
+        {
+            Debug.LogError("Menu.unity introuvable à : " + menuScenePath);
+        }
+
         foreach (var sceneGUID in AssetDatabase.FindAssets("t:scene"))
         {
             string scenePath = AssetDatabase.GUIDToAssetPath(sceneGUID);
-            var scene = new EditorBuildSettingsScene(scenePath, true);
-        
-            // Cherche une scène avec un nom typique de scène principale
-            if (scenePath.ToLower().Contains("main") || scenePath.ToLower().Contains("menu"))
+            if (scenePath != menuScenePath)
             {
-                if (mainScenePath == null)  // Prend la première qui correspond
-                {
-                    mainScenePath = scenePath;
-                    scenes.Insert(0, scene); // Met en premier
-                    continue;
-                }
+                scenes.Add(new EditorBuildSettingsScene(scenePath, true));
             }
-        
-            otherScenes.Add(scene);
         }
-        
-        // Ajouter les autres scènes après
-        scenes.AddRange(otherScenes);
-        
-        // Appliquer à la configuration du build
-        EditorBuildSettings.scenes = scenes.ToArray();
 
-        
-        // Sauvegarde des paramètres
+        EditorBuildSettings.scenes = scenes.ToArray();
         AssetDatabase.SaveAssets();
-        
+
         Debug.Log("Configuration Android terminée");
     }
 }
