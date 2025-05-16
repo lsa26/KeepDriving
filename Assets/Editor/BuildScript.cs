@@ -11,7 +11,7 @@ public class BuildAndroid
         try {
             Debug.Log("Configuration de la build pour Android...");
             
-            // Configuration Android
+            // Appel à la configuration
             SetupAndroidBuild.Configure();
             
             // Configuration des scènes
