@@ -27,14 +27,36 @@ public class SetupAndroidBuild
         GraphicsDeviceType[] devices = { GraphicsDeviceType.OpenGLES3 };
         PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, devices);
         
-        // Configuration des scènes
+        // Configuration des scènes avec tri pour prioriser la scène principale
         List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
+        string mainScenePath = null;
+        List<EditorBuildSettingsScene> otherScenes = new List<EditorBuildSettingsScene>();
+        
         foreach (var sceneGUID in AssetDatabase.FindAssets("t:scene"))
         {
             string scenePath = AssetDatabase.GUIDToAssetPath(sceneGUID);
-            scenes.Add(new EditorBuildSettingsScene(scenePath, true));
+            var scene = new EditorBuildSettingsScene(scenePath, true);
+        
+            // Cherche une scène avec un nom typique de scène principale
+            if (scenePath.ToLower().Contains("main") || scenePath.ToLower().Contains("menu"))
+            {
+                if (mainScenePath == null)  // Prend la première qui correspond
+                {
+                    mainScenePath = scenePath;
+                    scenes.Insert(0, scene); // Met en premier
+                    continue;
+                }
+            }
+        
+            otherScenes.Add(scene);
         }
+        
+        // Ajouter les autres scènes après
+        scenes.AddRange(otherScenes);
+        
+        // Appliquer à la configuration du build
         EditorBuildSettings.scenes = scenes.ToArray();
+
         
         // Sauvegarde des paramètres
         AssetDatabase.SaveAssets();
