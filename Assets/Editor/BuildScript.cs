@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting; // Ajout pour BuildReport, BuildSummary et BuildResult
 
 public class BuildAndroid
 {
