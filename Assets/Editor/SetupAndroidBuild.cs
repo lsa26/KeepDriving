@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering; // Ajout pour GraphicsDeviceType
 
 public class SetupAndroidBuild
 {
