@@ -1,37 +1,24 @@
 using UnityEditor;
 using System.IO;
-
-public class BuildScript
+public class BuildAndroid
 {
-    [MenuItem("Build/Build Android")]
-    public static void BuildAndroid()
-    {
-        string[] scenes = FindEnabledEditorScenes();
-        
-        // Configurer les paramètres de build pour Android
-        PlayerSettings.Android.keystorePass = "android";
-        PlayerSettings.Android.keyaliasPass = "android";
-        
-        // Définir le chemin de sortie pour l'APK
-        string buildPath = "build";
-        if (!Directory.Exists(buildPath))
-            Directory.CreateDirectory(buildPath);
-            
-        string apkPath = Path.Combine(buildPath, "KeepDriving.apk");
-        
-        // Lancer la build Android
-        BuildPipeline.BuildPlayer(scenes, apkPath, BuildTarget.Android, BuildOptions.None);
-    }
-    
-    private static string[] FindEnabledEditorScenes()
-    {
-        // Récupère toutes les scènes actives du projet
-        var editorScenes = new System.Collections.Generic.List<string>();
-        foreach (var scene in EditorBuildSettings.scenes)
-        {
-            if (scene.enabled)
-                editorScenes.Add(scene.path);
-        }
-        return editorScenes.ToArray();
-    }
+public static void Build()
+{
+// Configuration Android
+SetupAndroidBuild.Configure();
+// Configuration des scènes à inclure
+string[] scenes = new string[EditorBuildSettings.scenes.Length];
+for(int i = 0; i < EditorBuildSettings.scenes.Length; i++) {
+scenes[i] = EditorBuildSettings.scenes[i].path;
+}
+// Création du dossier de build si nécessaire
+string buildPath = "Builds";
+if (!Directory.Exists(buildPath))
+Directory.CreateDirectory(buildPath);
+// Lancement de la build
+BuildPipeline.BuildPlayer(scenes, 
+buildPath + "/CloudBeesDemo.apk", 
+BuildTarget.Android, 
+BuildOptions.None);
+}
 }
