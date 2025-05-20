@@ -1,0 +1,884 @@
+Unity Editor version:    6000.1.3f1 (f34db9734971)
+Branch:                  6000.1/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.5 (Build 24F74)
+Darwin version:          24.5.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        49152 MB
+Date:                    2025-05-20T09:55:07Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-lsaci doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 22281)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-lsaci" at "2025-05-20T09:55:07.404847Z"
+[Licensing::Client] Code 1 while verifying Licensing Client signature (process Id: 22281, path: "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              a69eba201d2f4b9181f413f2d28cf9f5
+  Correlation Id:          78edcf5f2682775ad112470783462267
+  External correlation Id: 1874388451451626881
+  Machine Id:              +2HTbKngxOWwJ/WlWJDlX1jSrgg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-lsaci" (connect: 0.40s, validation: 0.03s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-lsaci-notifications" at "2025-05-20T09:55:07.45417Z"
+[Licensing::Module] Connected to LicensingClient (PId: 22281, launch time: 0.00, total connection time: 0.45s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-8C6M-TCEK-VZAQ-G2SW-XXXX"
+[Licensing::Client] Successfully updated license, isAync: True, time: 1.40
+[Licensing::Client] Successfully resolved entitlement details
+Pro License: NO
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-nographics
+-silent-crashes
+-projectPath
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+-executeMethod
+CacheOptimizer.CleanCache
+-logFile
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/unity_cache_clean.log
+-quit
+Successfully changed project path to: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8439799552]  Target information:
+
+Player connection [8439799552]  * "[IP] 192.168.200.109 [Port] 55504 [Flags] 2 [Guid] 2287784571 [EditorId] 2287784571 [Version] 1048832 [Id] OSXEditor(0,lsaci-MacBook-Pro) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8439799552] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8439799552] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-22280" after 0.2 seconds.
+Library Redirect Path: Library/
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.collab-proxy@2.8.1
+  com.unity.ide.rider@3.0.36
+  com.unity.ide.visualstudio@2.0.23
+  com.unity.modules.androidjni@1.0.0
+  com.unity.test-framework@1.5.1
+  com.unity.timeline@1.8.7
+  com.unity.ugui@2.0.0
+  com.unity.xr.legacyinputhelpers@2.1.12
+  com.unity.ai.navigation@2.0.7
+  com.unity.modules.accessibility@1.0.0
+  com.unity.multiplayer.center@1.0.0
+The following packages were removed:
+  com.unity.package-manager-ui@1.9.11
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 45 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ai.navigation@39ae74efb85f)
+    com.unity.collab-proxy@2.8.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.collab-proxy@946053a44d19)
+    com.unity.ide.rider@3.0.36 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.timeline@1.8.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.timeline@c58b4ee65782)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.sprite@8e227b7a8e02)
+    com.unity.2d.tilemap@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.tilemap@e08379fa62fd)
+    com.unity.multiplayer.center@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.test-framework@1.5.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.test-framework@4969648bc874)
+    com.unity.ugui@2.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ugui@5c9fd4989cdd)
+    com.unity.modules.accessibility@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.umbra)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ext.nunit@031a54704bff)
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.09 seconds
+[Package Manager] Done resolving packages in 0.73 seconds
+[Package Manager] Registered 45 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ai.navigation@39ae74efb85f)
+    com.unity.collab-proxy@2.8.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.collab-proxy@946053a44d19)
+    com.unity.ide.rider@3.0.36 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.timeline@1.8.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.timeline@c58b4ee65782)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.sprite@8e227b7a8e02)
+    com.unity.2d.tilemap@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.tilemap@e08379fa62fd)
+    com.unity.multiplayer.center@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.test-framework@1.5.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.test-framework@4969648bc874)
+    com.unity.ugui@2.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ugui@5c9fd4989cdd)
+    com.unity.modules.accessibility@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.umbra)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ext.nunit@031a54704bff)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[Licensing::Client] Successfully resolved entitlement details
+Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.1.3f1 (f34db9734971)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56280
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.012116 seconds.
+- Loaded All Assemblies, in  0.171 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 3075 ms
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.296 seconds
+Domain Reload Profiling: 3467ms
+	BeginReloadAssembly (49ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (71ms)
+		LoadAssemblies (49ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (69ms)
+			TypeCache.Refresh (68ms)
+				TypeCache.ScanAssembly (63ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (3296ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3279ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3152ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (48ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-25dbf73a569bc4faf1a2ee752fcae88b
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 17.8195ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 4 Duration: 0s22ms
+[             ] Require frontend run.  Library/Bee/1300b0aE.dag couldn't be loaded
+DisplayProgressbar: Compiling Scripts
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aE.dag.json" "Library/Bee/1300b0aE-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 0 Duration: 0s356ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 0 Duration: 3s379ms
+Finished compiling graph: 366 nodes, 4787 flattened edges (4377 ToBuild, 52 ToUse), maximum node priority 220
+[132/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.dll.mvfrm.rsp
+[133/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.rsp2
+[134/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.rsp
+[135/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.rsp2
+[136/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.rsp
+[137/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.rsp2
+[138/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt
+[139/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt
+[140/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt
+[141/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.rsp
+[142/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.rsp2
+[143/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.dll.mvfrm.rsp
+[144/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.dll.mvfrm.rsp
+[145/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.dll.mvfrm.rsp
+[146/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.UnityAdditionalFile.txt
+[147/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp2
+[148/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.dll.mvfrm.rsp
+[149/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.rsp
+[150/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.dll.mvfrm.rsp
+[151/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.UnityAdditionalFile.txt
+[152/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.rsp2
+[153/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt
+[154/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.UnityAdditionalFile.txt
+[155/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.UnityAdditionalFile.txt
+[156/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.rsp
+[157/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.rsp2
+[158/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.UnityAdditionalFile.txt
+[159/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.rsp
+[160/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.rsp2
+[161/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.rsp
+[162/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.UnityAdditionalFile.txt
+[163/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.dll.mvfrm.rsp
+[164/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.UnityAdditionalFile.txt
+[165/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.rsp2
+[166/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.rsp2
+[167/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.UnityAdditionalFile.txt
+[168/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.dll.mvfrm.rsp
+[169/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.rsp2
+[170/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.rsp2
+[171/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.rsp
+[172/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.dll.mvfrm.rsp
+[173/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.dll.mvfrm.rsp
+[174/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.rsp
+[175/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.dll.mvfrm.rsp
+[176/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.dll.mvfrm.rsp
+[177/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.UnityAdditionalFile.txt
+[178/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.rsp
+[179/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.rsp
+[180/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.UnityAdditionalFile.txt
+[181/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.rsp2
+[182/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.rsp2
+[183/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.UnityAdditionalFile.txt
+[184/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.rsp2
+[185/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.rsp2
+[186/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.rsp
+[187/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.rsp2
+[188/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.UnityAdditionalFile.txt
+[189/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.rsp2
+[190/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.rsp2
+[191/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.UnityAdditionalFile.txt
+[192/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.rsp2
+[193/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.UnityAdditionalFile.txt
+[194/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.UnityAdditionalFile.txt
+[195/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.UnityAdditionalFile.txt
+[196/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.rsp2
+[197/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.UnityAdditionalFile.txt
+[198/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.UnityAdditionalFile.txt
+[199/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.rsp2
+[200/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.UnityAdditionalFile.txt
+[201/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.rsp2
+[202/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.dll.mvfrm.rsp
+[203/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.dll.mvfrm.rsp
+[204/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.rsp
+[205/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm.rsp
+[206/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.dll.mvfrm.rsp
+[207/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.dll.mvfrm.rsp
+[208/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm.rsp
+[209/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm.rsp
+[210/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.rsp
+[211/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.rsp
+[212/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.dll.mvfrm.rsp
+[213/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.dll.mvfrm.rsp
+[214/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.dll.mvfrm.rsp
+[215/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.dll.mvfrm.rsp
+[216/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.rsp
+[217/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt
+[218/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.rsp2
+[219/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.rsp
+[220/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.rsp
+[221/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp
+[222/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.rsp
+[223/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.rsp
+[224/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.rsp
+[225/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.rsp
+[226/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.rsp
+[227/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.UnityAdditionalFile.txt
+[228/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.rsp2
+[229/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.rsp2
+[230/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.dll.mvfrm.rsp
+[231/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.rsp
+[232/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt
+[233/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp
+[234/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.rsp
+[235/363    0s] WriteText Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.rsp
+[236/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.dll.mvfrm
+[237/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.dll.mvfrm
+[238/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[239/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.pdb
+[240/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+[241/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TestRunner.ref.dll_7423F2FBC6CF80C4.mvfrm
+[242/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.dll.mvfrm
+[243/363    1s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[244/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.UI.dll
+[245/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.UI.pdb
+[246/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UI.ref.dll_BDDAB6C3AC1C4D86.mvfrm
+[247/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.TestRunner.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[248/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+[249/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.pdb
+[250/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TestRunner.ref.dll_A805A84D9B0C22D9.mvfrm
+[251/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.dll.mvfrm
+[252/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[253/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.pdb
+[254/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.UI.dll
+[255/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UI.ref.dll_0174E068A5FA251B.mvfrm
+[256/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.dll.mvfrm
+[257/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.dll.mvfrm
+[258/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.dll.mvfrm
+[259/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm
+[260/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.dll.mvfrm
+[261/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.dll.mvfrm
+[262/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.dll.mvfrm
+[263/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.dll.mvfrm
+[264/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.dll.mvfrm
+[265/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.dll.mvfrm
+[266/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.dll.mvfrm
+[266/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.dll (+2 others) [CacheHit 10019e5400380957cba2ca8a365a6eac00000000000000000000000000000004]
+[267/363   1747734916s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.dll (+2 others)
+[269/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Rider.Editor.dll
+[270/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Rider.Editor.pdb
+[269/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.dll (+2 others) [CacheHit 2f0404224b8955107ed80bde19d2130300000000000000000000000000000004]
+[271/363   1747734916s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.VisualStudio.Editor.dll (+2 others)
+[273/363    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualStudio.Editor.pdb
+[274/363    0s] CopyFiles Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+[272/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.dll (+2 others) [CacheHit 6e532dfc0a69ca604e8ea416d5348e7d00000000000000000000000000000004]
+[275/363   1747734916s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.dll (+2 others)
+[277/363    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.pdb
+[278/363    0s] CopyFiles Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+[279/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Rider.Editor.ref.dll_DA88E6A3E9EB6155.mvfrm
+[280/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.VisualStudio.Editor.ref.dll_0FE027DDD6F41767.mvfrm
+[281/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.PlasticSCM.Editor.ref.dll_A558B9E65539D7D0.mvfrm
+[282/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.SpatialTracking.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[283/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+[284/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.SpatialTracking.pdb
+[285/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.dll.mvfrm
+[286/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.dll (+2 others)
+[287/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.dll (+2 others)
+[288/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[289/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.pdb
+[290/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.dll
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Common.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[291/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Multiplayer.Center.Common.pdb
+[292/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Multiplayer.Center.Common.dll
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[293/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.pdb
+[294/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.dll
+[295/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SpatialTracking.ref.dll_CC46AD662704850F.mvfrm
+[296/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Timeline.ref.dll_16F8EA6B67022FB5.mvfrm
+[297/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.ref.dll_B8DD527C37A2B60C.mvfrm
+[298/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Multiplayer.Center.Common.ref.dll_FF44434556825F42.mvfrm
+[299/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.dll (+2 others)
+[300/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.dll.mvfrm
+[301/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.dll.mvfrm
+[302/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.ConversionSystem.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[303/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.dll
+[304/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.pdb
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.CollabProxy.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[305/363    0s] CopyFiles Library/ScriptAssemblies/Unity.CollabProxy.Editor.pdb
+[306/363    0s] CopyFiles Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+[307/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.dll.mvfrm
+[308/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.dll (+2 others)
+[309/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.dll.mvfrm
+[310/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[311/363    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.pdb
+[312/363    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.dll
+[313/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[314/363    0s] CopyFiles Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+[315/363    0s] CopyFiles Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.pdb
+[316/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll_9957BA1AF208A4B4.mvfrm
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[317/363    0s] CopyFiles Library/ScriptAssemblies/Unity.2D.Sprite.Editor.pdb
+[318/363    0s] CopyFiles Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+[319/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.dll (+2 others)
+[320/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TextMeshPro.ref.dll_02929A3ECA791895.mvfrm
+[321/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.2D.Tilemap.Editor.ref.dll_C349DCD839D8880B.mvfrm
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.SpatialTracking.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[322/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+[323/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.SpatialTracking.pdb
+[324/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.dll.mvfrm
+[325/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.2D.Sprite.Editor.ref.dll_6C8185F9E5AE014E.mvfrm
+[326/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm
+[327/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SpatialTracking.ref.dll_4005BB3EAE0C01EA.mvfrm
+[328/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Multiplayer.Center.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[329/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.dll (+2 others)
+[330/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.pdb
+[331/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.dll
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[332/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.pdb
+[333/363    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+[334/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.dll (+2 others)
+[335/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Multiplayer.Center.Editor.ref.dll_FC2D3B4057A989C4.mvfrm
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[336/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Editor.pdb
+[337/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll
+[338/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.XR.LegacyInputHelpers.ref.dll_632513B3DE0B9F3C.mvfrm
+[339/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Editor.ref.dll_61B1FDAFDA0EF665.mvfrm
+[340/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.dll.mvfrm
+[341/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.dll (+2 others)
+[342/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.dll.mvfrm
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.Timeline.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[343/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.dll (+2 others)
+[344/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.Editor.pdb
+[345/363    0s] CopyFiles Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[346/363    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.Editor.pdb
+[347/363    0s] CopyFiles Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+[348/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.dll (+2 others)
+[349/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Timeline.Editor.ref.dll_17F688653313AA4C.mvfrm
+[350/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.TextMeshPro.Editor.ref.dll_D0BA3615D322EF6C.mvfrm
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/UnityEditor.XR.LegacyInputHelpers.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[351/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.pdb
+[352/363    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+[353/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1300b0aE.dag/Unity.AI.Navigation.Updater.dll (+2 others) [CacheWrite 00000000000000000000000000000004]
+[354/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Updater.pdb
+[355/363    0s] CopyFiles Library/ScriptAssemblies/Unity.AI.Navigation.Updater.dll
+[356/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.XR.LegacyInputHelpers.ref.dll_A2957EFDA2C64C37.mvfrm
+[357/363    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Updater.ref.dll_EBACA68F09445567.mvfrm
+[358/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll.mvfrm
+[359/363    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm
+[360/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll (+2 others)
+Assets/Scripts/Enemy/EnemyScript.cs(19,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScriptTurn.cs(24,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScript.cs(29,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScriptTurn.cs(43,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Scripts/LightingSystem.cs(134,71): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Examples/Scripts/SpiderLeg.cs(51,22): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Player/PlayerController.cs(98,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Player/PlayerController.cs(104,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Scripts/CustomSprite.cs(85,17): warning CS0618: 'Renderer.castShadows' is obsolete: 'Use shadowCastingMode instead.'
+Assets/Scripts/Player/PlayerController.cs(120,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/CameraFollower.cs(42,27): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/CameraFollower.cs(43,23): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/InputManager.cs(23,13): warning CS0618: 'Rigidbody2D.isKinematic' is obsolete: 'Please use Rigidbody2D.bodyType instead.'
+Assets/Light2D/Examples/Scripts/InputManager.cs(25,13): warning CS0618: 'Rigidbody2D.isKinematic' is obsolete: 'Please use Rigidbody2D.bodyType instead.'
+Assets/Light2D/Examples/Scripts/InputManager.cs(34,17): warning CS0618: 'Application.LoadLevel(int)' is obsolete: 'Use SceneManager.LoadScene'
+Assets/Light2D/Examples/Scripts/InputManager.cs(75,13): warning CS0618: 'Application.LoadLevel(int)' is obsolete: 'Use SceneManager.LoadScene'
+Assets/Light2D/Examples/Scripts/Spacecraft.cs(90,97): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/Spacecraft.cs(96,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/MapGenerator.cs(58,50): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Examples/Scripts/RocketEngine.cs(34,17): warning CS0618: 'ParticleSystem.enableEmission' is obsolete: 'enableEmission property is deprecated. Use emission.enabled instead.'
+Assets/Scripts/Menu/DebugScore.cs(8,19): warning CS0414: The field 'DebugScore.elapsedTime' is assigned but its value is never used
+Assets/Scripts/Level/SceneController.cs(34,10): warning CS0414: The field 'SceneController.gameLaunch' is assigned but its value is never used
+Assets/Scripts/Level/TrackScript.cs(53,9): warning CS0414: The field 'TrackScript.c' is assigned but its value is never used
+Assets/Scripts/GameControl/GameController.cs(42,10): warning CS0414: The field 'GameController.gameLaunch' is assigned but its value is never used
+[361/363    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[362/363    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[363/363    0s] Csc Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets/Light2D/Editor/LightingSystemCreationWindow.cs(24,17): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Editor/Light2DMenu.cs(79,27): warning CS0618: 'PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup)' is obsolete: 'Use GetScriptingDefineSymbols(NamedBuildTarget buildTarget) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(83,13): warning CS0618: 'PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup, string)' is obsolete: 'Use SetScriptingDefineSymbols(NamedBuildTarget buildTarget, string defines) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(88,27): warning CS0618: 'PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup)' is obsolete: 'Use GetScriptingDefineSymbols(NamedBuildTarget buildTarget) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(92,13): warning CS0618: 'PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup, string)' is obsolete: 'Use SetScriptingDefineSymbols(NamedBuildTarget buildTarget, string defines) instead'
+[364/363    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[365/363    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.25 seconds), 228 items updated, 363 evaluated
+[ApiUpdater] Total time: 472ms, Parse response file: 28ms, Collect updater configs: 73ms, Update: 368ms, Save: 3ms Files: 6 modified / 6 visited / 64 total (Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.dll).
+[API Updater] Updated Files:
+Skipping ScriptUpdater consent dialog. Consent declined based on command line parameters.
+Finished running ScriptUpdaters
+Assets/Scripts/Enemy/EnemyScript.cs(19,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScriptTurn.cs(24,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScript.cs(29,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Enemy/EnemyScriptTurn.cs(43,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Scripts/LightingSystem.cs(134,71): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Examples/Scripts/SpiderLeg.cs(51,22): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Player/PlayerController.cs(98,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Scripts/Player/PlayerController.cs(104,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Scripts/CustomSprite.cs(85,17): warning CS0618: 'Renderer.castShadows' is obsolete: 'Use shadowCastingMode instead.'
+Assets/Scripts/Player/PlayerController.cs(120,9): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/CameraFollower.cs(42,27): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/CameraFollower.cs(43,23): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/InputManager.cs(23,13): warning CS0618: 'Rigidbody2D.isKinematic' is obsolete: 'Please use Rigidbody2D.bodyType instead.'
+Assets/Light2D/Examples/Scripts/InputManager.cs(25,13): warning CS0618: 'Rigidbody2D.isKinematic' is obsolete: 'Please use Rigidbody2D.bodyType instead.'
+Assets/Light2D/Examples/Scripts/InputManager.cs(34,17): warning CS0618: 'Application.LoadLevel(int)' is obsolete: 'Use SceneManager.LoadScene'
+Assets/Light2D/Examples/Scripts/InputManager.cs(75,13): warning CS0618: 'Application.LoadLevel(int)' is obsolete: 'Use SceneManager.LoadScene'
+Assets/Light2D/Examples/Scripts/Spacecraft.cs(90,97): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/Spacecraft.cs(96,13): warning CS0618: 'Rigidbody2D.velocity' is obsolete: 'Please use Rigidbody2D.linearVelocity instead. (UnityUpgradable) -> linearVelocity'
+Assets/Light2D/Examples/Scripts/MapGenerator.cs(58,50): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Examples/Scripts/RocketEngine.cs(34,17): warning CS0618: 'ParticleSystem.enableEmission' is obsolete: 'enableEmission property is deprecated. Use emission.enabled instead.'
+Assets/Scripts/Menu/DebugScore.cs(8,19): warning CS0414: The field 'DebugScore.elapsedTime' is assigned but its value is never used
+Assets/Scripts/Level/SceneController.cs(34,10): warning CS0414: The field 'SceneController.gameLaunch' is assigned but its value is never used
+Assets/Scripts/Level/TrackScript.cs(53,9): warning CS0414: The field 'TrackScript.c' is assigned but its value is never used
+Assets/Scripts/GameControl/GameController.cs(42,10): warning CS0414: The field 'GameController.gameLaunch' is assigned but its value is never used
+Assets/Light2D/Editor/LightingSystemCreationWindow.cs(24,17): warning CS0618: 'Object.FindObjectOfType<T>()' is obsolete: 'Object.FindObjectOfType has been deprecated. Use Object.FindFirstObjectByType instead or if finding any instance is acceptable the faster Object.FindAnyObjectByType'
+Assets/Light2D/Editor/Light2DMenu.cs(79,27): warning CS0618: 'PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup)' is obsolete: 'Use GetScriptingDefineSymbols(NamedBuildTarget buildTarget) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(83,13): warning CS0618: 'PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup, string)' is obsolete: 'Use SetScriptingDefineSymbols(NamedBuildTarget buildTarget, string defines) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(88,27): warning CS0618: 'PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup)' is obsolete: 'Use GetScriptingDefineSymbols(NamedBuildTarget buildTarget) instead'
+Assets/Light2D/Editor/Light2DMenu.cs(92,13): warning CS0618: 'PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup, string)' is obsolete: 'Use SetScriptingDefineSymbols(NamedBuildTarget buildTarget, string defines) instead'
+AssetDatabase: script compilation time: 4.595300s
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.348 seconds
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '87c26957e1a6648c85ff50975ce651c0') in 0.007740375 seconds
+Start importing ProjectSettings/UnityConnectSettings.asset using Guid(0000000000000000a100000000000000) (LibraryAssetImporter) -> (artifact id: 'a2c5d98a08c5a32c3a9f9f4e6464eb77') in 0.000443291 seconds
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.320 seconds
+Domain Reload Profiling: 668ms
+	BeginReloadAssembly (186ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (118ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (9ms)
+	LoadAllAssembliesAndSetupDomain (131ms)
+		LoadAssemblies (129ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (43ms)
+			TypeCache.Refresh (35ms)
+				TypeCache.ScanAssembly (30ms)
+			BuildScriptInfoCaches (6ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (321ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (258ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (166ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftLegUpperRight.png using Guid(20158518f86c0fd4c81d766c0a1ccd04) (TextureImporter) -> (artifact id: '10d11db4cceee592efc7d894afe39b7d') in 0.012782541 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Block1.psd using Guid(a0ff682a2b0aa764a989cb0f1b63e39b) (TextureImporter) -> (artifact id: 'c18f5ef89cfc68c0b9fa4507c78a59c7') in 0.001518625 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Block3.psd using Guid(b0699e36d49214c4c860fe956fa12622) (TextureImporter) -> (artifact id: 'ea86be478434e84fbd81cfec5674658e') in 0.001269 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/TileColliding.png using Guid(0137bd74e735f324d9316d884486b513) (TextureImporter) -> (artifact id: 'c39e5efa33fbd6f8d40f61908c18cdbe') in 0.001129417 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/WhiteTexture.png using Guid(51cf9a7c7c69bed49ba78e70a38b3c3a) (TextureImporter) -> (artifact id: 'd521df91ca4f0a9eb1be3f7373f09b66') in 0.029808542 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallLeft.psd using Guid(a12358780cc90a940b6ebdc6506a51fd) (TextureImporter) -> (artifact id: '74a9163ab4a3dec9bd54fd3bff22fa41') in 0.001707042 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockBackground.psd using Guid(b15f8aa0e817f244286b50d0112a7420) (TextureImporter) -> (artifact id: '55aa6576bf5bcdd9f9acb7ff73c0a0c8') in 0.001175458 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftLegUpperLeft.png using Guid(e16f658eae4eee046b46d9248e2f5cd5) (TextureImporter) -> (artifact id: '924382454f194c3dc91c4b28f0b4c9ec') in 0.001282542 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight5.psd using Guid(f10edde00fb4c64429d3f0b5a4035dca) (TextureImporter) -> (artifact id: '9d8da551bea8989337c6051b3e42f77e') in 0.001447917 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftLegLowerRight.png using Guid(22b0c671550813c4896690f14f0558c8) (TextureImporter) -> (artifact id: 'd33460dcc4ee405785d49fed23ef29b3') in 0.001254625 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/BatSource.psd using Guid(326ead9178cef604d979d0a97e29751e) (TextureImporter) -> (artifact id: 'bd009d9ae184ff7f7511f2544ebbb786') in 0.002600458 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/LineLightBlurred.psd using Guid(52146be1fefc37a4f897ca9d235d8caa) (TextureImporter) -> (artifact id: '28b2105f17da009c62fa86b2faaa4286') in 0.001559542 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WoodPlank.psd using Guid(52c65c7b151c8ec41986d52b5f544822) (TextureImporter) -> (artifact id: '06ca89034b068749cfce6448b7cd3cce') in 0.001538666 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight3.psd using Guid(7214ba38ed456d7499541e6acac7868e) (TextureImporter) -> (artifact id: 'bbb5ff0c3ce12bed6378e13daa30487a') in 0.001549292 seconds
+Start importing Assets/Light2D/Examples/Images/UI/Slider.png using Guid(72fe867b6d5eaeb42866341cd4902ac2) (TextureImporter) -> (artifact id: 'f53692569f9e25bc21e21b7c50e35d8f') in 0.001012917 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/LineLight.psd using Guid(6367c244c56545e48855894ae9ea580d) (TextureImporter) -> (artifact id: 'c44dce7d65d3bb7c58670240decedcc4') in 0.00147625 seconds
+Start importing Assets/Textures/Road/road4.png using Guid(7339cf79a851c6449a1c335bf78aba54) (TextureImporter) -> (artifact id: '3149d5741794cec1b5094965c700b84c') in 0.002045708 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Flare.psd using Guid(4497205bfa4b9dc41b85f16689514403) (TextureImporter) -> (artifact id: 'd5575acd826f0f87fc28b5bc028cd25c') in 0.0011275 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/Cone.psd using Guid(74ecee72c19e6ca489a940ac06fc7918) (TextureImporter) -> (artifact id: '28a2cb86054c2e6ecd66eb38504ef934') in 0.001395917 seconds
+Start importing Assets/Textures/Road/road7.png using Guid(c44e33e90571c7b4eb5d60ce965e13fb) (TextureImporter) -> (artifact id: 'dc546cf75ab5ed1c18556a5a3dda1cce') in 0.001070333 seconds
+Start importing Assets/Textures/Road/road2.png using Guid(75a389ae4659ed4479118d67cf8345fd) (TextureImporter) -> (artifact id: 'cf8b1b0785a85beac903d4d96e93c594') in 0.001017584 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockR.psd using Guid(85ef6cf2bbf359a4e81a1c6dfac32ba1) (TextureImporter) -> (artifact id: '6c7a4378cb5dc5359e2b70e6b8cc835e') in 0.000986291 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftHull.png using Guid(b55a10123c4bcd847ab971337b580cc3) (TextureImporter) -> (artifact id: '9dea156a5b523f116f6bbc581b3411f4') in 0.002692042 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockB.psd using Guid(c5de43c092f5b894987aa12003fb1cea) (TextureImporter) -> (artifact id: 'f9a3ee6fdb34a2c2807719a8d8f8aa51') in 0.001183417 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallRight.psd using Guid(0676c27e393a7c442b76fed48585331b) (TextureImporter) -> (artifact id: '0a855941daaf0c7a94750f3c1849a3c0') in 0.001553417 seconds
+Start importing Assets/Light2D/Examples/Images/UI/SliderCircle.png using Guid(26019e16d6899fd4f8b08378f2bd4b6f) (TextureImporter) -> (artifact id: '2ee465b1dbb4072f86b4074807bf7a4d') in 0.048467583 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/BatAnimationFrames.png using Guid(2702b067a2561864bb336a27444fbacc) (TextureImporter) -> (artifact id: 'e2dd9eee393242671378f50657080d5c') in 0.003920792 seconds
+Start importing Assets/Textures/Road/Road5.png using Guid(27ecb884c5144ef448fcded0281c202f) (TextureImporter) -> (artifact id: 'c871a47db34b9187e96fc82bd87d45a3') in 0.00121975 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftNozzleSideRight.png using Guid(576745260d4bc484a9bfff0108b33f9b) (TextureImporter) -> (artifact id: '064dc6b57173d544a42c1ee4c7bfd628') in 0.001379083 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/TileNonColliding.png using Guid(f7bfe8e3f7c70a14b9d8f6ca3b51ac0e) (TextureImporter) -> (artifact id: '2c4a75961fb95ef92d63e917c6f7fb4f') in 0.000964125 seconds
+Start importing Assets/Light2D/Resources/DefaultLight.psd using Guid(0846a06dcf035814d9cee71f4ba273f9) (TextureImporter) -> (artifact id: '7a2018029c91273edcdeb8e78e9b5eb5') in 0.001340792 seconds
+Start importing Assets/Textures/Road/road1.png using Guid(684fdd75de652ab44a7b4139da1a75a9) (TextureImporter) -> (artifact id: '651b7a221542a3afb33e2430a3c28cd6') in 0.0010185 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/LightingCrystals.psd using Guid(094a9c1c04ad638429a92df1cdd98000) (TextureImporter) -> (artifact id: 'c459ece30df1f4e35e83cbcf5e67b560') in 0.001083375 seconds
+Start importing Assets/Textures/Road/road12.png using Guid(99196315a3429f54e9c226362bf9d4ca) (TextureImporter) -> (artifact id: '84d5643d9d7a19a717b7eb5cc5daf95b') in 0.001041459 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallBot.psd using Guid(1a01010bb6694ea49bfa34f95edc8e90) (TextureImporter) -> (artifact id: 'b7858a03b0c9383a1dd5ac7156bcc971') in 0.001408791 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight4.psd using Guid(1a2fa03369d897e439ef81a5d10d7241) (TextureImporter) -> (artifact id: '677b233d877cd4cbd88e0107406046bf') in 0.001468083 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockBL.psd using Guid(9a1533c2c84459a49b56c18eb9ca03e7) (TextureImporter) -> (artifact id: '5c64213fe3f1b770efe9d4324c4a7660') in 0.000984875 seconds
+Start importing Assets/Textures/Road/road13.png using Guid(aadb76baf76f0eb4bbaa7e165138477d) (TextureImporter) -> (artifact id: '26c2d01d963e1818101d7f281acab95f') in 0.000978542 seconds
+Start importing Assets/Textures/Road/road9.png using Guid(fa72d0bc0ec0ad745bf9dd83b532c568) (TextureImporter) -> (artifact id: '07460a022319a4fdc3354d10159cc9fe') in 0.000984375 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/BackgroundWall.psd using Guid(facd3a5a23eb2e44da59fd8251d4092d) (TextureImporter) -> (artifact id: '11cffd7f804cf6d7f9faedafcf6b11b5') in 0.0020455 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallBotLeft.psd using Guid(0ba19047f78655a4cbb6f649c375bccb) (TextureImporter) -> (artifact id: '52cbb7bde350351829641ed5302a2f94') in 0.00107725 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Empty.psd using Guid(2b5658352c17d6e49bb8f3c0c0f0dda1) (TextureImporter) -> (artifact id: '87a2bb9b196ea689d6b706214f32af2b') in 0.000999458 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftNozzleSideLeft.png using Guid(6b271afb46857f948a947215eb94046e) (TextureImporter) -> (artifact id: '37d9b0d7ba8fdf93c81e9296745295f3') in 0.001274084 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallBotRight.psd using Guid(7bdccc280f7b8ad4290e3baec34cd9ac) (TextureImporter) -> (artifact id: '74cca362c40cf3db6cd2877333dd7d67') in 0.001011958 seconds
+Start importing Assets/Textures/Road/road11.png using Guid(9b62eea966eb25349b7326c6fb93f9bf) (TextureImporter) -> (artifact id: 'a8dbc8595d6636675d3cebd8a35fcfae') in 0.000982458 seconds
+Start importing Assets/Textures/Road/road10.png using Guid(9bcaf54796c9b3e4fbb55c1396cc82db) (TextureImporter) -> (artifact id: 'a4df12305e8651df14c3186eebd1fd82') in 0.000986334 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/Water.psd using Guid(9cf672b10109aa54ea7b428faedbc529) (TextureImporter) -> (artifact id: 'dfb438fe552f4024333734f38b458fa9') in 0.001955625 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/BatSleeping.png using Guid(ac8479fda0b39f34b8ac74cee9248014) (TextureImporter) -> (artifact id: '7962920a6ae72934bec153271ed8b392') in 0.00109625 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Block2.psd using Guid(1d804c5a6f6fe074faf854bcd34550ea) (TextureImporter) -> (artifact id: 'bb6f330ed6db972a5ac0dadd1319e6fe') in 0.000939375 seconds
+Start importing Assets/Textures/Road/road3.png using Guid(3d95f5d19090f5c48aa2e4c6f63a9b45) (TextureImporter) -> (artifact id: '02d04b1c2b6ffc4622ec5b34c1972db0') in 0.000961125 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftNozzle.png using Guid(3d4da3727f46e3a44af4749f79d9da38) (TextureImporter) -> (artifact id: '08f8f1ba603ac58d4150be776418af84') in 0.001238042 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockBR.psd using Guid(5d02b7073ce82a146b474b8da527be2c) (TextureImporter) -> (artifact id: '1c5619d8d517bfb55813f80224f6b13f') in 0.001191209 seconds
+Start importing Assets/Textures/Road/road6.png using Guid(9d57ed996c7b78743bc86c1c87a533de) (TextureImporter) -> (artifact id: 'bcc95288b55b6bef3634fa525f0a7e24') in 0.001143834 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftLegLowerLeft.png using Guid(bd45c1b240706dd419d01f00efecb842) (TextureImporter) -> (artifact id: 'a25d0c6941a913bacfe3045b93384e20') in 0.001281 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockT.psd using Guid(0ed4d455d8a5ccc429197316b67e85ad) (TextureImporter) -> (artifact id: '9741a5a94d58f31c958b1c1734073828') in 0.000978916 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/LineLightSingle.psd using Guid(2ec0eb68f14358c4a817625546afdc03) (TextureImporter) -> (artifact id: '3055002373f8d3b7d887fda84aa52b58') in 0.0011595 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftNozzleReversedLeft.png using Guid(5e00459f5282395408f804cb7334176f) (TextureImporter) -> (artifact id: 'ba2cbac1f02bf806b4c05f599a3593d9') in 0.001165417 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallTopRight.psd using Guid(5e017bd9cfc94c14899ddda442cc1eac) (TextureImporter) -> (artifact id: '5445c15e35ce898bac1187f530ceb1df') in 0.001031708 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallTop.psd using Guid(5e76561edc343a64b99fbb291f32a33c) (TextureImporter) -> (artifact id: 'ceb94a13f885f0687f66439b75e995eb') in 0.001328375 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/WallTopLeft.psd using Guid(5ec6708413682af4796d0acfe683f454) (TextureImporter) -> (artifact id: '252596113380b8c6c1b8216ae5fd0c2f') in 0.001086542 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/Spacecraft/SpacecraftNozzleReversedRight.png using Guid(5e2bdc559a67ba54482ce195bf37efe7) (TextureImporter) -> (artifact id: '2ede7379018f625038cc3922721478ff') in 0.001257083 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight6.psd using Guid(de67f3bc3c6d41f4f9811ec4e3393c09) (TextureImporter) -> (artifact id: 'cc52bf896cec6c6255eb3ccbd07fdc2c') in 0.001359125 seconds
+Start importing Assets/Textures/Road/road8.png using Guid(5f37690112534964d93c6307a2928334) (TextureImporter) -> (artifact id: '7c3a6e7aba91c93b9b70e7f17dc21992') in 0.000985334 seconds
+Start importing Assets/Textures/Road/road0.png using Guid(8f387489ad2d2a344bf79a6880b66319) (TextureImporter) -> (artifact id: '60c3d27ebb0910ae48fbc9e6642d6cf0') in 0.000988959 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight1.psd using Guid(8f9933b91e84ef049bf349fdba91ad2d) (TextureImporter) -> (artifact id: 'dfe2fa66a1d2238715a7703e2ce66043') in 0.001394792 seconds
+Start importing Assets/Light2D/Examples/Images/Castle/Wall.psd using Guid(bf51b8bd609221d40ba75811f82d2a6a) (TextureImporter) -> (artifact id: '195f2a7ab1b567457f2c582677aa54c7') in 0.001964 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/LineLightSingleBlurred.psd using Guid(bff6856cd4d83bf4bbd1db97d8c12e2d) (TextureImporter) -> (artifact id: '8e716c1e5da554ef38c7d976e472a638') in 0.001199208 seconds
+Start importing Assets/Light2D/Examples/Images/Lights/PointLight2.psd using Guid(cffb8f052040d0e42a0f40f76ed189ee) (TextureImporter) -> (artifact id: 'e8af11ceffe8557108898c552d647deb') in 0.001327667 seconds
+Start importing Assets/Light2D/Examples/Images/Rocket/BlockL.psd using Guid(df2d767cf73e55d4aa1f2d0688f812e4) (TextureImporter) -> (artifact id: '4e7ea2981358693d0b038040a843614a') in 0.000963041 seconds
+Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=085cb60aa64c5469fb67039e875688d7): Total: 5.913 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=71 (actual=71, local cache=0, cache server=0)
+		Asset DB Process Time: managed=11 ms, native=899 ms
+		Asset DB Callback time: managed=48 ms, native=1 ms
+		Scripting: domain reloads=1, domain reload time=348 ms, compile time=4596 ms, other=6 ms
+		Project Asset Count: scripts=521, non-scripts=1001
+		Asset File Changes: new=0, changed=71, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 1.570ms
+	ApplyChangesToAssetFolders: 0.196ms
+	Scan: 303.838ms
+	OnSourceAssetsModified: 0.528ms
+	CategorizeAssetsWithTransientArtifact: 6.227ms
+	ProcessAssetsWithTransientArtifactChanges: 10.107ms
+	CategorizeAssets: 7.442ms
+	ImportOutOfDateAssets: 517.674ms (-4274.046ms without children)
+		ImportManagerImport: 195.044ms (2.558ms without children)
+			ImportInProcess: 192.255ms
+			UpdateCategorizedAssets: 0.231ms
+		CompileScripts: 4596.155ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.197ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.152ms
+		InitializingProgressBar: 0.004ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.168ms
+	PostProcessAllAssets: 48.578ms
+	Hotreload: 0.792ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.401ms
+	PersistCurrentRevisions: 0.058ms
+	UnloadStreamsEnd: 0.000ms
+	GenerateScriptTypeHashes: 0.804ms
+	Untracked: 5015.881ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 0.031ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Keep Driving
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1916 unused Assets / (1.4 MB). Loaded Objects now: 2450.
+Memory consumption went from 122.5 MB to 121.1 MB.
+Total: 3.880917 ms (FindLiveObjects: 0.079542 ms CreateObjectMapping: 0.029791 ms MarkObjects: 3.299584 ms  DeleteObjects: 0.471833 ms)
+
+Starting cache cleanup...
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+CacheOptimizer:CleanCache () (at Assets/Editor/CacheOptimizer.cs:11)
+
+(Filename: Assets/Editor/CacheOptimizer.cs Line: 11)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:Refresh () (at /Users/bokken/build/output/unity/unity/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:382)
+CacheOptimizer:CleanCache () (at Assets/Editor/CacheOptimizer.cs:22)
+
+[/Users/bokken/build/output/unity/unity/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 382]
+
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.AssetDatabase:Refresh () (at /Users/bokken/build/output/unity/unity/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs:382)
+CacheOptimizer:CleanCache () (at Assets/Editor/CacheOptimizer.cs:22)
+
+[/Users/bokken/build/output/unity/unity/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs line 382]
+
+Asset Pipeline Refresh (id=e4321dc6b7f1d40119dac55ffc9b76bb): Total: 0.175 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Cache cleanup completed successfully
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+CacheOptimizer:CleanCache () (at Assets/Editor/CacheOptimizer.cs:24)
+
+(Filename: Assets/Editor/CacheOptimizer.cs Line: 24)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0.03802 seconds.
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '3f698cd1b202d02debc799b87bd7e3e7') in 0.001360666 seconds
+Refreshing native plugins compatible for Editor in 0.22 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0c6de1f02301b4e4984d7c7600020111): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Unloading 8 unused Assets / (314.7 KB). Loaded Objects now: 2459.
+Memory consumption went from 110.9 MB to 110.5 MB.
+Total: 4.641125 ms (FindLiveObjects: 0.040208 ms CreateObjectMapping: 0.014875 ms MarkObjects: 4.312042 ms  DeleteObjects: 0.273875 ms)
+
+Thread 0x170793000 may have been prematurely finalized
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Physics::Module] Cleanup current backned.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-lsaci-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-lsaci channel disconnected successfully.
+Thread 0x170eaf000 may have been prematurely finalized
+Thread 0x170f3b000 may have been prematurely finalized
+AcceleratorClientConnectionCallback - disconnected - :0
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+Cleanup mono
+debugger-agent: Unable to listen on 44
+[usbmuxd] Stop listen thread
+[usbmuxd] Error: 
+[usbmuxd] Listen thread exiting
+Exiting batchmode successfully now!
+[Package Manager] Server process was shutdown
