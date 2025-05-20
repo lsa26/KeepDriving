@@ -1,0 +1,1524 @@
+Unity Editor version:    6000.1.3f1 (f34db9734971)
+Branch:                  6000.1/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.5 (Build 24F74)
+Darwin version:          24.5.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        49152 MB
+Date:                    2025-05-20T09:55:20Z
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-lsaci doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 22564)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-lsaci" at "2025-05-20T09:55:20.784703Z"
+[Licensing::Client] Code 1 while verifying Licensing Client signature (process Id: 22564, path: "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              5d2d9a6d1ab8446ebf063f9ec102127a
+  Correlation Id:          29b9bb8e87a11a88cb7890af098ae832
+  External correlation Id: 4749028283718118485
+  Machine Id:              +2HTbKngxOWwJ/WlWJDlX1jSrgg=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-lsaci" (connect: 0.28s, validation: 0.04s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-lsaci-notifications" at "2025-05-20T09:55:20.840794Z"
+[Licensing::Module] Connected to LicensingClient (PId: 22564, launch time: 0.00, total connection time: 0.33s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "F4-8C6M-TCEK-VZAQ-G2SW-XXXX"
+[Licensing::Client] Successfully updated license, isAync: True, time: 1.11
+[Licensing::Client] Successfully resolved entitlement details
+Pro License: NO
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-nographics
+-silent-crashes
+-projectPath
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+-executeMethod
+BuildAndroid.Build
+-logFile
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/unity_build.log
+-quit
+Successfully changed project path to: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8439799552]  Target information:
+
+Player connection [8439799552]  * "[IP] 192.168.200.109 [Port] 55504 [Flags] 2 [Guid] 53199923 [EditorId] 53199923 [Version] 1048832 [Id] OSXEditor(0,lsaci-MacBook-Pro) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8439799552] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8439799552] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-22563" after 0.2 seconds.
+Library Redirect Path: Library/
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 45 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ai.navigation@39ae74efb85f)
+    com.unity.collab-proxy@2.8.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.collab-proxy@946053a44d19)
+    com.unity.ide.rider@3.0.36 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.rider@4d374c7eb6db)
+    com.unity.ide.visualstudio@2.0.23 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13)
+    com.unity.timeline@1.8.7 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.timeline@c58b4ee65782)
+    com.unity.xr.legacyinputhelpers@2.1.12 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.sprite@8e227b7a8e02)
+    com.unity.2d.tilemap@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.2d.tilemap@e08379fa62fd)
+    com.unity.multiplayer.center@1.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.multiplayer.center@f3fb577b3546)
+    com.unity.test-framework@1.5.1 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.test-framework@4969648bc874)
+    com.unity.ugui@2.0.0 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ugui@5c9fd4989cdd)
+    com.unity.modules.accessibility@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.umbra)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/PackageCache/com.unity.ext.nunit@031a54704bff)
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.09 seconds
+[Licensing::Client] Successfully resolved entitlement details
+Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.1.3f1 (f34db9734971)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56563
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.012076 seconds.
+- Loaded All Assemblies, in  0.172 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 3074 ms
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.375 seconds
+Domain Reload Profiling: 3546ms
+	BeginReloadAssembly (49ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (72ms)
+		LoadAssemblies (50ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (70ms)
+			TypeCache.Refresh (69ms)
+				TypeCache.ScanAssembly (63ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (3375ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (3360ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3235ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (50ms)
+			ProcessInitializeOnLoadAttributes (49ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-25dbf73a569bc4faf1a2ee752fcae88b
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 18.1930ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s59ms
+*** Tundra build success (0.04 seconds), 0 items updated, 363 evaluated
+AssetDatabase: script compilation time: 0.370393s
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.353 seconds
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.351 seconds
+Domain Reload Profiling: 705ms
+	BeginReloadAssembly (181ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (121ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (9ms)
+	LoadAllAssembliesAndSetupDomain (141ms)
+		LoadAssemblies (136ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (39ms)
+				TypeCache.ScanAssembly (33ms)
+			BuildScriptInfoCaches (7ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (351ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (280ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (179ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+Asset Pipeline Refresh (id=2fc6413f8001e423e8996eac93e4276e): Total: 1.397 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=654 ms
+		Asset DB Callback time: managed=9 ms, native=0 ms
+		Scripting: domain reloads=1, domain reload time=353 ms, compile time=371 ms, other=6 ms
+		Project Asset Count: scripts=521, non-scripts=1001
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 1.657ms
+	ApplyChangesToAssetFolders: 0.210ms
+	Scan: 215.978ms
+	OnSourceAssetsModified: 0.000ms
+	CategorizeAssetsWithTransientArtifact: 6.346ms
+	ProcessAssetsWithTransientArtifactChanges: 11.222ms
+	CategorizeAssets: 7.183ms
+	ImportOutOfDateAssets: 353.382ms (-18.452ms without children)
+		CompileScripts: 371.337ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.205ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.135ms
+		InitializingProgressBar: 0.000ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.157ms
+	PostProcessAllAssets: 9.925ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.399ms
+	PersistCurrentRevisions: 0.027ms
+	UnloadStreamsEnd: 0.000ms
+	GenerateScriptTypeHashes: 0.854ms
+	Untracked: 791.060ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 0.029ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Keep Driving
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1916 unused Assets / (1.5 MB). Loaded Objects now: 2445.
+Memory consumption went from 119.9 MB to 118.4 MB.
+Total: 3.891750 ms (FindLiveObjects: 0.074000 ms CreateObjectMapping: 0.035125 ms MarkObjects: 3.312375 ms  DeleteObjects: 0.469708 ms)
+
+Starting Android build process...
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:14)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 14)
+
+Using environment BUILD_TYPE: Release
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:22)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 22)
+
+Scene included: Assets/_Scenes/menu.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:36)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 36)
+
+Scene included: Assets/_Scenes/main.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:36)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 36)
+
+Scene included: Assets/_Scenes/quality.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:36)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 36)
+
+Scene included: Assets/_Scenes/cutscene.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:36)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 36)
+
+Scene included: Assets/_Scenes/credits.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:36)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 36)
+
+APK path: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Builds/CloudBeesDemo.apk
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:66)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 66)
+
+Starting Android build...
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:105)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 105)
+
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '0453ebd2a7c2f53d726045f944d5c1d8') in 0.003412875 seconds
+Start importing ProjectSettings/UnityConnectSettings.asset using Guid(0000000000000000a100000000000000) (LibraryAssetImporter) -> (artifact id: '8000619395557b47df65ee241df1fbf0') in 0.000442541 seconds
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+[/Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs line 534]
+
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9a133954be6414feaaa5e8f0c011a22d): Total: 0.129 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+DisplayProgressbar: Checking prerequisites
+Android PostProcess task "Checking prerequisites" took 6.1612 ms
+DisplayProgressbar: Detect Java Development Kit (JDK)
+Android PostProcess task "Detect Java Development Kit (JDK)" took 112.7293 ms
+DisplayProgressbar: Detecting Android SDK
+AndroidSDKTools:
+
+	root          : /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/SDK
+	cmdline-tools : /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/SDK/cmdline-tools/16.0
+	platform-tools: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/SDK/platform-tools
+	build-tools   : /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/SDK/build-tools/34.0.0
+
+	adb           : /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb
+
+Android PostProcess task "Detecting Android SDK" took 2584.2294 ms
+DisplayProgressbar: Detect Android NDK
+Android PostProcess task "Detect Android NDK" took 0.707 ms
+Android PostProcess task "Trying to find a suitable Android device" took 0.2106 ms
+DisplayProgressbar: Check resources
+Android PostProcess task "Check resources" took 0.2142 ms
+DisplayProgressbar: Check Android Player Settings
+Android PostProcess task "Check Android Player Settings" took 0.5845 ms
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.9498ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aESkipCompile.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 4 Duration: 0s18ms
+[             ] Require frontend run.  Library/Bee/1300b0aESkipCompile.dag couldn't be loaded
+DisplayProgressbar: Compiling Scripts
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aESkipCompile.dag.json" "Library/Bee/1300b0aESkipCompile-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 0 Duration: 0s306ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aESkipCompile.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aESkipCompile.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 0 Duration: 0s226ms
+Finished compiling graph: 4 nodes, 5 flattened edges (5 ToBuild, 0 ToUse), maximum node priority 3
+[2/3        0s] BuildPlayerDataGenerator Library/BuildPlayerData/Editor/TypeDb-All.json
+*** Tundra build success (0.20 seconds), 1 items updated, 3 evaluated
+The .meta file Assets/Editor.meta does not have a valid GUID and its corresponding Asset file will be ignored. If this file is not malformed, please add a GUID, or delete the .meta file and it will be recreated correctly
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+[/Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs line 534]
+
+Asset Pipeline Refresh (id=9a249a166464c45fd8a049e5c742a219): Total: 0.088 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[ScriptCompilation] Requested script compilation because: Recompiling scripts for player build.
+BuildPlayer: start building target 13
+Total cache size 274684416
+Total cache size after purge 267638508, took 00:00:00.1449796
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.2690ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aP.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/1300b0aP.dag.json" "Library/Bee/1300b0aP-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 4 Duration: 0s199ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1300b0aP-inputdata.json
+[101/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/UnityEngine.UI.dll.mvfrm
+*** Tundra requires additional run (0.08 seconds), 1 items updated, 100 evaluated
+ExitCode: 0 Duration: 0s325ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/1300b0aP.dag" --continue-on-failure --dagfilejson="Library/Bee/1300b0aP.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+Total cache size 267638508
+Total cache size after purge 267638508, took 00:00:00.0608299
+ExitCode: 0 Duration: 0s337ms
+Finished compiling graph: 143 nodes, 952 flattened edges (878 ToBuild, 16 ToUse), maximum node priority 65
+[104/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.pdb
+[105/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll
+[106/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/Unity.AI.Navigation.dll.mvfrm
+[109/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.dll
+[110/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.AI.Navigation.pdb
+[111/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/Unity.Multiplayer.Center.Common.dll.mvfrm
+[112/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/Unity.TextMeshPro.dll.mvfrm
+[113/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/UnityEngine.SpatialTracking.dll.mvfrm
+[114/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/Unity.Timeline.dll.mvfrm
+[123/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Multiplayer.Center.Common.pdb
+[124/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Timeline.dll
+[125/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.SpatialTracking.dll
+[126/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Timeline.pdb
+[127/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.Multiplayer.Center.Common.dll
+[128/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.SpatialTracking.pdb
+[129/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.pdb
+[130/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll
+[131/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/UnityEngine.XR.LegacyInputHelpers.dll.mvfrm
+[134/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.pdb
+[135/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+[136/142    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1300b0aP.dag/Assembly-CSharp.dll.mvfrm
+[138/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.pdb
+[139/142    0s] CopyFiles Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll
+*** Tundra build success (0.21 seconds), 23 items updated, 142 evaluated
+Not rebuilding Data files -- no changes
+
+
+Mono dependencies included in the build
+Dependency assembly - System.Xml.dll
+Dependency assembly - Microsoft.Build.Framework.dll
+Dependency assembly - System.IdentityModel.dll
+Dependency assembly - mscorlib.dll
+Dependency assembly - System.Net.HttpListener.dll
+Dependency assembly - System.IO.dll
+Dependency assembly - System.Net.Mail.dll
+Dependency assembly - System.Net.NetworkInformation.dll
+Dependency assembly - System.Reactive.Windows.Threading.dll
+Dependency assembly - System.Security.Cryptography.Encoding.dll
+Dependency assembly - System.Web.WebPages.Razor.dll
+Dependency assembly - System.DirectoryServices.Protocols.dll
+Dependency assembly - System.Runtime.InteropServices.WindowsRuntime.dll
+Dependency assembly - Mono.CSharp.dll
+Dependency assembly - System.Reactive.Experimental.dll
+Dependency assembly - System.Net.WebHeaderCollection.dll
+Dependency assembly - System.Web.Http.SelfHost.dll
+Dependency assembly - System.dll
+Dependency assembly - Unity.Timeline.dll
+Dependency assembly - System.Globalization.dll
+Dependency assembly - System.Reflection.Emit.Lightweight.dll
+Dependency assembly - System.Threading.ThreadPool.dll
+Dependency assembly - Mono.Options.dll
+Dependency assembly - Mono.XBuild.Tasks.dll
+Dependency assembly - System.Net.dll
+Dependency assembly - WindowsBase.dll
+Dependency assembly - System.Reflection.dll
+Dependency assembly - System.Security.Cryptography.Hashing.Algorithms.dll
+Dependency assembly - monodoc.dll
+Dependency assembly - System.IO.FileSystem.dll
+Dependency assembly - System.Diagnostics.Tools.dll
+Dependency assembly - System.Diagnostics.TraceEvent.dll
+Dependency assembly - System.Web.ApplicationServices.dll
+Dependency assembly - System.IO.MemoryMappedFiles.dll
+Dependency assembly - System.IO.UnmanagedMemoryStream.dll
+Dependency assembly - System.Security.Principal.Windows.dll
+Dependency assembly - Microsoft.Build.Tasks.v4.0.dll
+Dependency assembly - I18N.dll
+Dependency assembly - System.Xaml.dll
+Dependency assembly - System.Data.dll
+Dependency assembly - System.Resources.Writer.dll
+Dependency assembly - System.Linq.dll
+Dependency assembly - System.Reactive.Debugger.dll
+Dependency assembly - System.Data.Services.Client.dll
+Dependency assembly - System.Security.Principal.dll
+Dependency assembly - System.ServiceModel.Duplex.dll
+Dependency assembly - System.Numerics.Vectors.dll
+Dependency assembly - System.Runtime.Serialization.Formatters.dll
+Dependency assembly - System.Web.Http.dll
+Dependency assembly - Mono.Simd.dll
+Dependency assembly - System.Threading.Tasks.Dataflow.dll
+Dependency assembly - System.Reflection.Extensions.dll
+Dependency assembly - System.ServiceModel.Routing.dll
+Dependency assembly - System.Resources.ReaderWriter.dll
+Dependency assembly - Assembly-CSharp.dll
+Dependency assembly - System.ComponentModel.DataAnnotations.dll
+Dependency assembly - System.ComponentModel.TypeConverter.dll
+Dependency assembly - System.Runtime.DurableInstancing.dll
+Dependency assembly - System.Data.SqlClient.dll
+Dependency assembly - System.Collections.Specialized.dll
+Dependency assembly - Mono.WebBrowser.dll
+Dependency assembly - System.Xml.XDocument.dll
+Dependency assembly - System.Drawing.dll
+Dependency assembly - System.Net.Http.Rtc.dll
+Dependency assembly - System.Runtime.Loader.dll
+Dependency assembly - System.Messaging.dll
+Dependency assembly - System.Net.Http.WebRequest.dll
+Dependency assembly - System.Web.WebPages.Deployment.dll
+Dependency assembly - System.Reactive.Core.dll
+Dependency assembly - System.Web.Razor.dll
+Dependency assembly - System.Windows.Forms.DataVisualization.dll
+Dependency assembly - System.Security.AccessControl.dll
+Dependency assembly - System.AppContext.dll
+Dependency assembly - System.Net.Requests.dll
+Dependency assembly - System.IO.FileSystem.AccessControl.dll
+Dependency assembly - System.Reactive.Providers.dll
+Dependency assembly - System.Security.Cryptography.Encryption.ECDiffieHellman.dll
+Dependency assembly - System.Globalization.Calendars.dll
+Dependency assembly - Mono.Btls.Interface.dll
+Dependency assembly - System.Security.Cryptography.Hashing.dll
+Dependency assembly - System.Runtime.Remoting.dll
+Dependency assembly - System.Security.Cryptography.X509Certificates.dll
+Dependency assembly - System.ObjectModel.dll
+Dependency assembly - System.Data.DataSetExtensions.dll
+Dependency assembly - System.Reflection.Context.dll
+Dependency assembly - System.Diagnostics.TextWriterTraceListener.dll
+Dependency assembly - System.Security.Cryptography.Cng.dll
+Dependency assembly - System.Runtime.Serialization.dll
+Dependency assembly - System.Threading.Overlapped.dll
+Dependency assembly - Microsoft.CSharp.dll
+Dependency assembly - System.Web.Mvc.dll
+Dependency assembly - System.Web.Http.WebHost.dll
+Dependency assembly - System.Threading.Tasks.dll
+Dependency assembly - System.Linq.Parallel.dll
+Dependency assembly - System.Net.Security.dll
+Dependency assembly - System.ComponentModel.Composition.dll
+Dependency assembly - System.Runtime.Extensions.dll
+Dependency assembly - System.Xml.XPath.dll
+Dependency assembly - System.Diagnostics.TraceSource.dll
+Dependency assembly - Mono.Security.dll
+Dependency assembly - System.Diagnostics.Tracing.dll
+Dependency assembly - System.DirectoryServices.dll
+Dependency assembly - System.Reactive.Interfaces.dll
+Dependency assembly - I18N.Rare.dll
+Dependency assembly - System.Security.Cryptography.Csp.dll
+Dependency assembly - System.Security.Cryptography.RSA.dll
+Dependency assembly - Microsoft.Win32.Registry.AccessControl.dll
+Dependency assembly - System.Threading.Thread.dll
+Dependency assembly - Microsoft.Build.Utilities.v4.0.dll
+Dependency assembly - System.Web.Abstractions.dll
+Dependency assembly - I18N.Other.dll
+Dependency assembly - System.Text.Encoding.Extensions.dll
+Dependency assembly - System.Transactions.dll
+Dependency assembly - System.Threading.Tasks.Extensions.dll
+Dependency assembly - System.Data.OracleClient.dll
+Dependency assembly - System.Workflow.Activities.dll
+Dependency assembly - System.IO.Pipes.dll
+Dependency assembly - Mono.Tasklets.dll
+Dependency assembly - System.Runtime.dll
+Dependency assembly - System.Drawing.Design.dll
+Dependency assembly - System.ComponentModel.Annotations.dll
+Dependency assembly - System.Runtime.CompilerServices.VisualC.dll
+Dependency assembly - System.ComponentModel.EventBasedAsync.dll
+Dependency assembly - Mono.Cairo.dll
+Dependency assembly - UnityEngine.XR.LegacyInputHelpers.dll
+Dependency assembly - CustomMarshalers.dll
+Dependency assembly - System.Runtime.Serialization.Primitives.dll
+Dependency assembly - System.Resources.Reader.dll
+Dependency assembly - I18N.CJK.dll
+Dependency assembly - System.Console.dll
+Dependency assembly - System.Threading.AccessControl.dll
+Dependency assembly - System.Security.Cryptography.Encryption.Aes.dll
+Dependency assembly - Microsoft.Build.dll
+Dependency assembly - System.Xml.XmlDocument.dll
+Dependency assembly - System.Diagnostics.Process.dll
+Dependency assembly - System.Numerics.dll
+Dependency assembly - System.Xml.Serialization.dll
+Dependency assembly - System.Net.Utilities.dll
+Dependency assembly - System.Memory.dll
+Dependency assembly - System.Threading.Timer.dll
+Dependency assembly - System.Xml.ReaderWriter.dll
+Dependency assembly - Microsoft.Web.Infrastructure.dll
+Dependency assembly - System.Configuration.Install.dll
+Dependency assembly - SMDiagnostics.dll
+Dependency assembly - System.Json.Microsoft.dll
+Dependency assembly - netstandard.dll
+Dependency assembly - System.Net.WebSockets.dll
+Dependency assembly - System.Threading.Tasks.Parallel.dll
+Dependency assembly - System.Runtime.InteropServices.RuntimeInformation.dll
+Dependency assembly - System.ServiceModel.dll
+Dependency assembly - System.Collections.dll
+Dependency assembly - System.Reactive.Linq.dll
+Dependency assembly - System.Net.Http.Formatting.dll
+Dependency assembly - System.Reflection.Emit.ILGeneration.dll
+Dependency assembly - System.IdentityModel.Selectors.dll
+Dependency assembly - System.Security.dll
+Dependency assembly - System.Diagnostics.FileVersionInfo.dll
+Dependency assembly - System.Data.Services.dll
+Dependency assembly - System.Security.Cryptography.ProtectedData.dll
+Dependency assembly - System.Management.dll
+Dependency assembly - IBM.Data.DB2.dll
+Dependency assembly - System.IO.Compression.dll
+Dependency assembly - Unity.Multiplayer.Center.Common.dll
+Dependency assembly - Microsoft.Build.Engine.dll
+Dependency assembly - System.ServiceModel.Internals.dll
+Dependency assembly - System.Runtime.InteropServices.dll
+Dependency assembly - System.ServiceModel.Discovery.dll
+Dependency assembly - System.Runtime.Numerics.dll
+Dependency assembly - System.IO.Compression.ZipFile.dll
+Dependency assembly - Mono.CompilerServices.SymbolWriter.dll
+Dependency assembly - System.Workflow.ComponentModel.dll
+Dependency assembly - System.Net.Primitives.dll
+Dependency assembly - System.ServiceModel.NetTcp.dll
+Dependency assembly - Mono.Parallel.dll
+Dependency assembly - System.Data.Entity.dll
+Dependency assembly - cscompmgd.dll
+Dependency assembly - RabbitMQ.Client.dll
+Dependency assembly - System.Net.Ping.dll
+Dependency assembly - I18N.MidEast.dll
+Dependency assembly - UnityEngine.UI.dll
+Dependency assembly - Mono.Data.Sqlite.dll
+Dependency assembly - WebMatrix.Data.dll
+Dependency assembly - System.Security.Claims.dll
+Dependency assembly - System.Xml.XPath.XmlDocument.dll
+Dependency assembly - System.IO.FileSystem.DriveInfo.dll
+Dependency assembly - Mono.Security.Win32.dll
+Dependency assembly - System.Net.WebSockets.Client.dll
+Dependency assembly - System.ComponentModel.Primitives.dll
+Dependency assembly - System.Windows.Forms.dll
+Dependency assembly - System.Xml.Linq.dll
+Dependency assembly - System.IO.Compression.FileSystem.dll
+Dependency assembly - System.Net.ServicePoint.dll
+Dependency assembly - System.ServiceModel.Activation.dll
+Dependency assembly - Mono.Posix.dll
+Dependency assembly - System.Net.NameResolution.dll
+Dependency assembly - System.ServiceModel.Http.dll
+Dependency assembly - System.ServiceModel.Primitives.dll
+Dependency assembly - Microsoft.Win32.Registry.dll
+Dependency assembly - System.Net.Cache.dll
+Dependency assembly - System.ServiceModel.Web.dll
+Dependency assembly - Unity.TextMeshPro.dll
+Dependency assembly - System.Runtime.Serialization.Json.dll
+Dependency assembly - System.Security.Cryptography.DeriveBytes.dll
+Dependency assembly - ICSharpCode.SharpZipLib.dll
+Dependency assembly - System.Collections.Concurrent.dll
+Dependency assembly - System.Reflection.Primitives.dll
+Dependency assembly - System.Security.Cryptography.Algorithms.dll
+Dependency assembly - System.Runtime.Handles.dll
+Dependency assembly - SystemWebTestShim.dll
+Dependency assembly - System.Xml.XPath.XDocument.dll
+Dependency assembly - Mono.Management.dll
+Dependency assembly - System.Web.RegularExpressions.dll
+Dependency assembly - Unity.AI.Navigation.dll
+Dependency assembly - System.Runtime.Serialization.Xml.dll
+Dependency assembly - Mono.Http.dll
+Dependency assembly - System.Threading.dll
+Dependency assembly - System.Linq.Expressions.dll
+Dependency assembly - System.Reactive.Observable.Aliases.dll
+Dependency assembly - System.Web.Routing.dll
+Dependency assembly - System.Security.Cryptography.Encryption.ECDsa.dll
+Dependency assembly - System.Web.dll
+Dependency assembly - Microsoft.VisualC.dll
+Dependency assembly - System.IO.IsolatedStorage.dll
+Dependency assembly - System.Runtime.Serialization.Formatters.Soap.dll
+Dependency assembly - UnityEngine.SpatialTracking.dll
+Dependency assembly - Mono.Messaging.RabbitMQ.dll
+Dependency assembly - System.Web.DynamicData.dll
+Dependency assembly - System.Deployment.dll
+Dependency assembly - System.Security.Cryptography.RandomNumberGenerator.dll
+Dependency assembly - System.Globalization.Extensions.dll
+Dependency assembly - System.IO.FileSystem.Primitives.dll
+Dependency assembly - System.Web.Extensions.Design.dll
+Dependency assembly - System.Configuration.dll
+Dependency assembly - System.IO.FileSystem.Watcher.dll
+Dependency assembly - System.Security.Cryptography.OpenSsl.dll
+Dependency assembly - System.ServiceProcess.dll
+Dependency assembly - System.Reactive.Runtime.Remoting.dll
+Dependency assembly - Microsoft.Win32.Primitives.dll
+Dependency assembly - System.Json.dll
+Dependency assembly - System.Web.WebPages.dll
+Dependency assembly - System.Buffers.dll
+Dependency assembly - System.Diagnostics.Debug.dll
+Dependency assembly - System.ServiceModel.Security.dll
+Dependency assembly - System.Data.Common.dll
+Dependency assembly - Mono.C5.dll
+Dependency assembly - System.Dynamic.Runtime.dll
+Dependency assembly - System.Web.Services.dll
+Dependency assembly - System.Diagnostics.StackTrace.dll
+Dependency assembly - System.Xml.Xsl.Primitives.dll
+Dependency assembly - Mono.Profiler.Log.dll
+Dependency assembly - PEAPI.dll
+Dependency assembly - Mono.Data.Tds.dll
+Dependency assembly - System.Runtime.Caching.dll
+Dependency assembly - System.Windows.dll
+Dependency assembly - System.Reactive.Windows.Forms.dll
+Dependency assembly - System.Web.Extensions.dll
+Dependency assembly - System.Text.RegularExpressions.dll
+Dependency assembly - System.Security.Cryptography.Primitives.dll
+Dependency assembly - System.Web.Mobile.dll
+Dependency assembly - System.ValueTuple.dll
+Dependency assembly - System.EnterpriseServices.dll
+Dependency assembly - System.Security.Cryptography.Pkcs.dll
+Dependency assembly - System.Core.dll
+Dependency assembly - System.Workflow.Runtime.dll
+Dependency assembly - System.Collections.NonGeneric.dll
+Dependency assembly - Accessibility.dll
+Dependency assembly - Commons.Xml.Relaxng.dll
+Dependency assembly - System.Reflection.TypeExtensions.dll
+Dependency assembly - System.Linq.Queryable.dll
+Dependency assembly - I18N.West.dll
+Dependency assembly - System.Reflection.DispatchProxy.dll
+Dependency assembly - System.ComponentModel.dll
+Dependency assembly - System.Security.Cryptography.Encryption.dll
+Dependency assembly - System.Resources.ResourceManager.dll
+Dependency assembly - System.Design.dll
+Dependency assembly - System.Data.Linq.dll
+Dependency assembly - System.Net.Sockets.dll
+Dependency assembly - System.Dynamic.dll
+Dependency assembly - System.Drawing.Primitives.dll
+Dependency assembly - System.ServiceProcess.ServiceController.dll
+Dependency assembly - System.Security.SecureString.dll
+Dependency assembly - System.Diagnostics.Contracts.dll
+Dependency assembly - Mono.Messaging.dll
+Dependency assembly - System.Net.Http.dll
+Dependency assembly - System.Text.Encoding.dll
+Dependency assembly - System.Net.AuthenticationManager.dll
+Dependency assembly - System.Reflection.Emit.dll
+Dependency assembly - System.Xml.XmlSerializer.dll
+Dependency assembly - System.Reactive.PlatformServices.dll
+Dependency assembly - System.Text.Encoding.CodePages.dll
+Dependency assembly - Novell.Directory.Ldap.dll
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1325)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture ic_launcher is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImage (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:118)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:145)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1328)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo BG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+Compressed texture rocks new logo FG is used as icon. This might compromise visual quality of the final image. Uncompressed format might be considered as better import option.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+UnityEditor.Utils.IconUtility:ExportImageToPath (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:82)
+UnityEditor.Utils.IconUtility:ExportImageNumbered (string,UnityEngine.Texture2D,UnityEditor.Utils.ImageDescription,uint) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:130)
+UnityEditor.Utils.IconUtility:ExportIcon (string,string,UnityEditor.Utils.ImageDescription,int) (at /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs:141)
+UnityEditor.Android.AndroidBuildPostprocessor:AddIconsToBuild (UnityEditor.Modules.AddIconsArgs) (at /home/bokken/build/output/unity/unity/PlatformDependent/AndroidPlayer/Editor/Managed/ExtensionModule.cs:1331)
+UnityEditor.PostprocessBuildPlayer:Postprocess (UnityEditor.BuildTarget,int,string,string,string,UnityEditor.BuildOptions,UnityEditor.RuntimeClassRegistry,UnityEditor.Build.Reporting.BuildReport) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline/PostprocessBuildPlayer.cs:295)
+UnityEditor.BuildPipeline:BuildPlayerInternalNoCheck (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[],bool)
+UnityEditor.BuildPipeline:BuildPlayerInternal (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:534)
+UnityEditor.BuildPipeline:BuildPlayer (string[],string,string,UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget,int,UnityEditor.BuildOptions,string[]) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:418)
+UnityEditor.BuildPipeline:BuildPlayer (UnityEditor.BuildPlayerOptions) (at /Users/bokken/build/output/unity/unity/Editor/Mono/BuildPipeline.bindings.cs:364)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:106)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/Utils/IconUtility.bindings.cs Line: 82)
+
+DisplayProgressbar: Initializing
+Android PostProcess task "Initializing" took 0.386 ms
+DisplayProgressbar: Check gradle project collisions
+Android PostProcess task "Check gradle project collisions" took 0.0951 ms
+DisplayProgressbar: Preparing banner
+Android PostProcess task "Preparing banner" took 0.1411 ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.1450ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --dagfile="Library/Bee/Playereb37b58e.dag" --profile="Library/Bee/backend1.traceevents" Player
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/Playereb37b58e-inputdata.json
+*** Tundra requires additional run (0.01 seconds), 0 items updated, 0 evaluated
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/AndroidPlayerBuildProgram.exe" "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/Bee:/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/BuildPipeline" "Library/Bee/Playereb37b58e.dag.json" "Library/Bee/Playereb37b58e-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 4 Duration: 0s108ms
+DisplayProgressbar: Incremental Player Build
+ExitCode: 0 Duration: 0s395ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --dagfile="Library/Bee/Playereb37b58e.dag" --dagfilejson="Library/Bee/Playereb37b58e.dag.json" --profile="Library/Bee/backend2.traceevents" Player
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+Finished compiling graph: 238 nodes, 650 flattened edges (650 ToBuild, 0 ToUse), maximum node priority 139
+[ 79/233    0s] WriteText /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/resources/META-INF/com.android.games.engine.build_fingerprint
+[ 86/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/libs/unity-classes.jar
+[ 90/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/Resources/unity default resources
+[ 91/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java
+[ 92/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so
+[ 93/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/data.unity3d
+[ 94/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so
+[ 95/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmonobdwgc-2.0.so
+[ 96/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmono-native.so
+[ 97/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libMonoPosixHelper.so
+[ 99/233    0s] AddBootConfigGUID Library/Bee/artifacts/Android/boot.config
+[100/233    0s] ActionGenerateProjectFiles Library/Bee/artifacts/Android/IntermediateFiles.txt (+16 others)
+[101/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.XRModule-FeaturesChecked.txt
+[102/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Configuration-FeaturesChecked.txt
+[103/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AIModule-FeaturesChecked.txt
+[104/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VRModule-FeaturesChecked.txt
+[105/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UIModule-FeaturesChecked.txt
+[106/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Mono.Security-FeaturesChecked.txt
+[107/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.HierarchyCoreModule-FeaturesChecked.txt
+[108/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine-FeaturesChecked.txt
+[109/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsCommonModule-FeaturesChecked.txt
+[110/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AccessibilityModule-FeaturesChecked.txt
+[111/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/Assembly-CSharp-FeaturesChecked.txt
+[112/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextRenderingModule-FeaturesChecked.txt
+[113/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TerrainModule-FeaturesChecked.txt
+[114/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.ParticleSystemModule-FeaturesChecked.txt
+[115/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Core-FeaturesChecked.txt
+[116/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AssetBundleModule-FeaturesChecked.txt
+[117/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityAnalyticsModule-FeaturesChecked.txt
+[118/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SpriteShapeModule-FeaturesChecked.txt
+[119/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UnityWebRequestModule-FeaturesChecked.txt
+[120/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreFontEngineModule-FeaturesChecked.txt
+[121/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SharedInternalsModule-FeaturesChecked.txt
+[122/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Numerics-FeaturesChecked.txt
+[123/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.InputLegacyModule-FeaturesChecked.txt
+[124/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TextCoreTextEngineModule-FeaturesChecked.txt
+[125/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System-FeaturesChecked.txt
+[126/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.DirectorModule-FeaturesChecked.txt
+[127/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VFXModule-FeaturesChecked.txt
+[128/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/System.Xml-FeaturesChecked.txt
+[129/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.Physics2DModule-FeaturesChecked.txt
+[130/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.GridModule-FeaturesChecked.txt
+[131/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AnimationModule-FeaturesChecked.txt
+[132/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.CoreModule-FeaturesChecked.txt
+[133/233    0s] CopyFiles /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/boot.config
+[134/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/mscorlib-FeaturesChecked.txt
+[166/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AudioModule-FeaturesChecked.txt
+[201/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UIElementsModule-FeaturesChecked.txt
+[202/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.SubsystemsModule-FeaturesChecked.txt
+[221/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.PropertiesModule-FeaturesChecked.txt
+[222/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.AndroidJNIModule-FeaturesChecked.txt
+[223/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.InputForUIModule-FeaturesChecked.txt
+[224/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.IMGUIModule-FeaturesChecked.txt
+[225/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.VideoModule-FeaturesChecked.txt
+[226/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.InputModule-FeaturesChecked.txt
+[227/233    0s] GuidGenerator /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid
+[228/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.TilemapModule-FeaturesChecked.txt
+[229/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.PhysicsModule-FeaturesChecked.txt
+[230/233    0s] ExtractUsedFeatures Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt
+*** Tundra requires additional run (0.57 seconds), 59 items updated, 233 evaluated
+*** Additional run caused by: timestamp change of Library/Bee/artifacts/Android/Features/UnityEngine.UI-FeaturesChecked.txt
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/AndroidPlayerBuildProgram.exe" "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/Bee:/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/Tools/BuildPipeline" "Library/Bee/Playereb37b58e.dag.json" "Library/Bee/Playereb37b58e-inputdata.json" "Library/Bee/buildprogram1.traceevents"
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+ExitCode: 4 Duration: 0s616ms
+ExitCode: 0 Duration: 0s401ms
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/bee_backend --ipc --dagfile="Library/Bee/Playereb37b58e.dag" --dagfilejson="Library/Bee/Playereb37b58e.dag.json" --profile="Library/Bee/backend3.traceevents" Player
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android
+Finished compiling graph: 238 nodes, 650 flattened edges (650 ToBuild, 0 ToUse), maximum node priority 139
+[231/233    0s] Generate Manifests Library/Bee/artifacts/Android/Manifest/IntermediateLauncherManifestDiag.txt (+3 others)
+[232/233    0s] ModifyAndroidProjectCallback /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/src/main/AndroidManifest.xml (+8 others)
+*** Tundra build success (0.19 seconds), 2 items updated, 233 evaluated
+DisplayProgressbar: Calling IPostGenerateGradleAndroidProject callbacks
+Calling IPostGenerateGradleAndroidProject callbacks on '/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary':
+Android PostProcess task "Calling IPostGenerateGradleAndroidProject callbacks" took 0.4511 ms
+DisplayProgressbar: Validate Gradle Project
+Android PostProcess task "Validate Gradle Project" took 0.3107 ms
+Android PostProcess task "Cloud Diagnostics Symbol Upload" took 0.1025 ms
+DisplayProgressbar: Building Gradle project
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java -classpath "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/Tools/gradle/lib/gradle-launcher-8.11.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx4096m" "assembleRelease" 
+WorkingDir: /Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/launcher
+Total cache size 267638508
+Total cache size after purge 267638508, took 00:00:00.0753561
+ExitCode: 0 Duration: 0s314ms
+Android PostProcess task "Building Gradle project" took 20580.0335 ms
+DisplayProgressbar: Building Gradle Symbols
+Android PostProcess task "Building Gradle Symbols" took 0.2354 ms
+DisplayProgressbar: Processing Mapping File
+Android PostProcess task "Processing Mapping File" took 0.3032 ms
+DisplayProgressbar: Moving output package(s)
+Deleting file '/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Builds/CloudBeesDemo.apk'
+Copy '/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/build/outputs/apk/release/launcher-release.apk' -> 
+ '/Users/lsaci/jenkins-agent/workspace/lsa/Workspace Caching/KeepDriving-Android/Builds/CloudBeesDemo.apk'
+Android PostProcess task "Moving output package(s)" took 10.4758 ms
+Android PostProcess task "Checking Symbols size" took 0.6612 ms
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+-------------------------------------------------------------------------------
+Build Report
+Information on used Assets is not available, since player data was not rebuilt.
+Do a clean build to view the Asset build report information.
+-------------------------------------------------------------------------------
+Unloading 11 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (0.8 MB). Loaded Objects now: 2502.
+Memory consumption went from 128.4 MB to 127.6 MB.
+Total: 6.260584 ms (FindLiveObjects: 0.070042 ms CreateObjectMapping: 0.034000 ms MarkObjects: 5.694875 ms  DeleteObjects: 0.461375 ms)
+
+Build Finished, Result: Success.
+Launching external process: /Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/il2cpp/build/deploy/Analytics
+##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1747734954724,"processId":22563,"steps":[{"description":"Preprocess Player","duration":7},{"description":"Prepare For Build","duration":2709},{"description":"ProducePlayerScriptAssemblies","duration":1608},{"description":"Verify Build setup","duration":62},{"description":"Prepare assets for target platform","duration":0},{"description":"Prepare splash screen","duration":0},{"description":"Run script only build","duration":6},{"description":"Postprocess built player","duration":22431}],"duration":26823}
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            0.292 ms
+	Integration:            2.639 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.003 ms
+	Total Operation Time:   2.935 ms
+Unloading 0 unused Assets / (Unknown). Loaded Objects now: 2502.
+Memory consumption went from 123.6 MB to 123.6 MB.
+Total: 3.432625 ms (FindLiveObjects: 0.038666 ms CreateObjectMapping: 0.016209 ms MarkObjects: 3.372541 ms  DeleteObjects: 0.005125 ms)
+
+Build successful! Time: 00:00:27.0106582 Size: 64685148 bytes
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+BuildAndroid:Build () (at Assets/Editor/BuildAndroid.cs:111)
+
+(Filename: Assets/Editor/BuildAndroid.cs Line: 111)
+
+Thread 0x16f793000 may have been prematurely finalized
+Batchmode quit successfully invoked - shutting down!
+Starting: /Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java -classpath "/Applications/Unity/Hub/Editor/6000.1.3f1/PlaybackEngines/AndroidPlayer/Tools/gradle/lib/gradle-launcher-8.11.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx4096m" "--stop" 
+WorkingDir: 
+Killing ADB server in 0.029229 seconds.
+Thread 0x170053000 may have been prematurely finalized
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Physics::Module] Cleanup current backned.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-lsaci-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-lsaci channel disconnected successfully.
+Thread 0x1706e3000 may have been prematurely finalized
+Thread 0x17076f000 may have been prematurely finalized
+AcceleratorClientConnectionCallback - disconnected - :0
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+Cleanup mono
+debugger-agent: Unable to listen on 44
+[usbmuxd] Stop listen thread
+[usbmuxd] Error: 
+[usbmuxd] Listen thread exiting
+Exiting batchmode successfully now!
+[Package Manager] Server process was shutdown
