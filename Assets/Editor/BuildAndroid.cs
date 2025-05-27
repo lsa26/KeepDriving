@@ -13,7 +13,6 @@ public class BuildAndroid
         {
             Debug.Log("Starting Android build process...");
             
-            // Add environment variable detection with fallback
             string buildType = "Development";
             string envBuildType = System.Environment.GetEnvironmentVariable("BUILD_TYPE");
             if (!string.IsNullOrEmpty(envBuildType))
@@ -26,7 +25,6 @@ public class BuildAndroid
                 Debug.Log("Environment BUILD_TYPE not found, using default: " + buildType);
             }
             
-            // Configuration des scènes
             List<string> enabledScenes = new List<string>();
             foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
             {
@@ -55,7 +53,6 @@ public class BuildAndroid
                 return;
             }
             
-            // Ensure build directory exists
             string buildPath = Path.Combine(Directory.GetCurrentDirectory(), "Builds");
             if (!Directory.Exists(buildPath))
             {
@@ -65,16 +62,13 @@ public class BuildAndroid
             string apkPath = Path.Combine(buildPath, "CloudBeesDemo.apk");
             Debug.Log("APK path: " + apkPath);
             
-            // Build options
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = enabledScenes.ToArray();
             buildPlayerOptions.locationPathName = apkPath;
             buildPlayerOptions.target = BuildTarget.Android;
             
-            // Set Android keystore to false
             PlayerSettings.Android.useCustomKeystore = false;
             
-            // Set build options based on build type
             if (buildType == "Development")
             {
                 buildPlayerOptions.options = BuildOptions.Development | BuildOptions.CompressWithLz4;
@@ -88,7 +82,6 @@ public class BuildAndroid
                 EditorUserBuildSettings.connectProfiler = false;
             }
             
-            // Set Android settings
             PlayerSettings.Android.bundleVersionCode = 1;
             PlayerSettings.bundleVersion = "1.0";
             PlayerSettings.companyName = "Demo";
@@ -97,11 +90,9 @@ public class BuildAndroid
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.androidBuildSystem = AndroidBuildSystem.Gradle;
             
-            // Build optimization
             PlayerSettings.bakeCollisionMeshes = true;
             PlayerSettings.stripUnusedMeshComponents = true;
             
-            // Start the build
             Debug.Log("Starting Android build...");
             BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
             BuildSummary summary = report.summary;
