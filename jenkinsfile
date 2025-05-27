@@ -1,0 +1,162 @@
+pipeline {
+    agent {
+        label 'mac-unity'
+    }
+    options {
+        timeout(time: 120, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+
+    parameters {
+        booleanParam(name: 'CLEAN_BUILD', defaultValue: false, description: 'Perform a clean build (removes cache)')
+        choice(name: 'BUILD_TYPE', choices: ['Development', 'Release'], description: 'Type of build to perform')
+        string(name: 'CUSTOM_MEMORY', defaultValue: '4096m', description: 'Maximum memory for Unity (e.g.: 4096m, 8192m)')
+    }
+    
+    stages {
+        stage('cleanup') {
+            when {
+                expression { return params.CLEAN_BUILD }
+            }
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('checkout') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: '*/master']],
+                    extensions: [[$class: 'CloneOption', depth: 1, noTags: true, shallow: true]],
+                    userRemoteConfigs: [[url: 'https://github.com/lsa26/KeepDriving']]
+                )
+            }
+        }
+
+        stage('readCache') {
+            when {
+                expression { return !params.CLEAN_BUILD }
+            }
+            steps {
+                readCache name: 'c1-unity-deps'
+            }
+        }
+
+        stage('prepare-unity-environment') {
+            steps {
+                sh '''
+                # Create necessary directories if they don't exist
+                mkdir -p "${WORKSPACE}/Library"
+                mkdir -p "${WORKSPACE}/Packages"
+                mkdir -p "${WORKSPACE}/Assets/Editor"
+                mkdir -p "${WORKSPACE}/Builds"
+                
+                # Clean only logs and temporary files
+                rm -rf "${WORKSPACE}/Library/Logs" || true
+                rm -rf "${WORKSPACE}/Temp" || true
+                rm -f "${WORKSPACE}/*.log" || true
+                '''
+            }
+        }
+        
+   
+        stage('build') {
+            steps {
+                sh '''
+                export BUILD_TYPE="${BUILD_TYPE}"
+                
+                UNITY_PATH="/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MacOS/Unity"
+                
+                "$UNITY_PATH" -version
+                
+                touch "${WORKSPACE}/Assets/Editor.meta"
+                touch "${WORKSPACE}/test_access.log"
+                
+                MEM_OPTIONS="-force-free -memory-profile -disable-gpu-skinning"
+                
+                echo "Cleaning Unity cache..."
+                "$UNITY_PATH" \\
+                    -batchmode \\
+                    -nographics \\
+                    -silent-crashes \\
+                    -projectPath "${WORKSPACE}" \\
+                    -executeMethod CacheOptimizer.CleanCache \\
+                    -logFile "${WORKSPACE}/unity_cache_clean.log" \\
+                    -quit
+                
+                if [ -f "${WORKSPACE}/unity_cache_clean.log" ]; then
+                    echo "Cache cleaning result:"
+                    cat "${WORKSPACE}/unity_cache_clean.log"
+                else
+                    echo "Cache cleaning log file was not created"
+                fi
+                
+                echo "Starting Android build..."
+                "$UNITY_PATH" \\
+                    -batchmode \\
+                    -nographics \\
+                    -silent-crashes \\
+                    -projectPath "${WORKSPACE}" \\
+                    -executeMethod BuildAndroid.Build \\
+                    -logFile "${WORKSPACE}/unity_build.log" \\
+                    -quit
+                
+                echo "Complete build log:"
+                if [ -f "${WORKSPACE}/unity_build.log" ]; then
+                    cat "${WORKSPACE}/unity_build.log"
+                else
+                    echo "Build log file was not created"
+                fi
+                
+                if [ -f "${WORKSPACE}/Builds/CloudBeesDemo.apk" ]; then
+                    APK_SIZE=$(du -h "${WORKSPACE}/Builds/CloudBeesDemo.apk" | cut -f1)
+                    echo "APK generated successfully. Size: $APK_SIZE"
+                else
+                    echo "WARNING: APK not generated!"
+                fi
+                '''
+            }
+        }
+        
+        stage('post-build-parallel') {
+            parallel {
+                stage('uploadApk') {
+                    when {
+                        expression { fileExists("${WORKSPACE}/Builds/CloudBeesDemo.apk") }
+                    }
+                    steps {
+                        sh '''
+                        echo "Uploading APK to bashupload.com..."
+                        UPLOAD_RESPONSE=$(curl -s --upload-file "${WORKSPACE}/Builds/CloudBeesDemo.apk" https://bashupload.com/CloudBeesDemo.apk)
+                        echo "Upload response:"
+                        echo "$UPLOAD_RESPONSE"
+                        
+                        DOWNLOAD_URL=$(echo "$UPLOAD_RESPONSE" | grep -o 'wget https://bashupload.com/[^ ]*' | cut -d' ' -f2)
+                        
+                        if [ -n "$DOWNLOAD_URL" ]; then
+                            echo "🎯 Direct APK download link: $DOWNLOAD_URL"
+                        else
+                            echo "❌ Failed to extract link. Here's the raw response:"
+                            echo "$UPLOAD_RESPONSE"
+                        fi
+                        '''
+                    }
+                }
+
+                stage('writeCache') {
+                    steps {
+                        // Optimized cache - only essential directories
+                        writeCache name: 'c1-unity-deps', includes: 'Library/**,Temp/**,obj/**'
+                    }
+                }
+
+                stage('archive') {
+                    steps {
+                        archiveArtifacts artifacts: 'Builds/*.apk', allowEmptyArchive: true
+                        archiveArtifacts artifacts: 'unity_*.log', allowEmptyArchive: true
+                    }
+                }
+            }
+        }
+    }
+}
