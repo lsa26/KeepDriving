@@ -12,13 +12,8 @@ public class CacheOptimizer
         
         try 
         {
-            // Force garbage collection
             GC.Collect();
-            
-            // Clean unused assets
             Resources.UnloadUnusedAssets();
-            
-            // Clean asset database cache
             AssetDatabase.Refresh();
             
             Debug.Log("Cache cleanup completed successfully");
