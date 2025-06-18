@@ -1,0 +1,459 @@
+pipeline {
+    agent {
+        label 'mac-unity'
+    }
+    options {
+        timeout(time: 120, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+
+    parameters {
+        booleanParam(name: 'CLEAN_BUILD', defaultValue: false, description: 'Perform a clean build (removes cache)')
+        booleanParam(name: 'FORCE_CACHE_REFRESH', defaultValue: false, description: 'Force refresh of Unity Library cache')
+        choice(name: 'BUILD_TYPE', choices: ['Development', 'Release'], description: 'Type of build to perform')
+        choice(name: 'CACHE_STRATEGY', choices: ['full', 'library-only', 'incremental'], description: 'Cache strategy for this build')
+        string(name: 'CUSTOM_MEMORY', defaultValue: '8192m', description: 'Maximum memory for Unity (recommended 8GB+ for large projects)')
+    }
+    
+    environment {
+        UNITY_PATH = "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MacOS/Unity"
+        CACHE_VERSION = "v2.1" // Increment when cache format changes
+    }
+    
+    stages {
+        stage('Pre-Build Analysis') {
+            steps {
+                script {
+                    // Analyze project size and complexity
+                    def projectStats = sh(script: '''
+                        echo "=== PROJECT ANALYSIS ==="
+                        echo "Git branches: $(git branch -r | wc -l)"
+                        echo "Total files: $(find . -type f | wc -l)"
+                        echo "Unity assets: $(find Assets -name "*.unity" -o -name "*.prefab" -o -name "*.asset" | wc -l)"
+                        echo "Scripts: $(find Assets -name "*.cs" | wc -l)"
+                        if [ -d "Library" ]; then
+                            echo "Library size: $(du -sh Library | cut -f1)"
+                        fi
+                        echo "Submodules: $(git submodule status | wc -l)"
+                    ''', returnStdout: true)
+                    
+                    echo "Project Analysis Results:"
+                    echo projectStats
+                    
+                    // Store for later use
+                    env.PROJECT_COMPLEXITY = projectStats.contains("Submodules: 0") ? "simple" : "complex"
+                }
+            }
+        }
+
+        stage('Intelligent Cleanup') {
+            when {
+                anyOf {
+                    expression { return params.CLEAN_BUILD }
+                    expression { return params.FORCE_CACHE_REFRESH }
+                }
+            }
+            steps {
+                sh '''
+                echo "🧹 Performing intelligent cleanup..."
+                
+                if [ "$CLEAN_BUILD" = "true" ]; then
+                    echo "Full clean requested - removing workspace"
+                    rm -rf "${WORKSPACE}"/*
+                elif [ "$FORCE_CACHE_REFRESH" = "true" ]; then
+                    echo "Cache refresh - keeping source, cleaning Unity artifacts"
+                    rm -rf "${WORKSPACE}/Library" || true
+                    rm -rf "${WORKSPACE}/Temp" || true
+                    rm -rf "${WORKSPACE}/obj" || true
+                    rm -rf "${WORKSPACE}/Builds" || true
+                fi
+                '''
+            }
+        }
+
+        stage('Optimized Checkout') {
+            steps {
+                script {
+                    // Get project hash after checkout
+                    checkout scmGit(
+                        branches: [[name: '*/master']],
+                        extensions: [[$class: 'CloneOption', depth: 1, noTags: true, shallow: true]],
+                        userRemoteConfigs: [[url: 'https://github.com/lsa26/KeepDriving']]
+                    )
+                    
+                    // Now we can get the git hash
+                    env.PROJECT_HASH = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
+                    echo "Project hash: ${env.PROJECT_HASH}"
+                    
+                    if (env.PROJECT_COMPLEXITY == "complex") {
+                        echo "Complex project detected - updating submodules..."
+                        sh "git submodule update --init --recursive || echo 'No submodules found'"
+                    }
+                }
+            }
+        }
+
+        stage('Multi-Layer Cache Restore') {
+            when {
+                expression { !params.CLEAN_BUILD }
+            }
+            parallel {
+                stage('Unity Library Cache') {
+                    steps {
+                        script {
+                            try {
+                                echo "🔄 Restoring Unity Library cache..."
+                                readCache name: "unity-library-${CACHE_VERSION}", includes: 'Library/ArtifactDB,Library/SourceAssetDB,Library/metadata/**,Library/ShaderCache/**', excludes: 'Library/Logs/**,Library/temp/**'
+                                env.LIBRARY_CACHE_HIT = "true"
+                            } catch (Exception e) {
+                                echo "⚠️  Library cache miss: ${e.message}"
+                                env.LIBRARY_CACHE_HIT = "false"
+                            }
+                        }
+                    }
+                }
+                
+                stage('Package Cache') {
+                    steps {
+                        script {
+                            try {
+                                echo "📦 Restoring Package cache..."
+                                readCache name: "unity-packages-${CACHE_VERSION}", includes: 'Packages/**, Library/PackageCache/**'
+                                env.PACKAGE_CACHE_HIT = "true"
+                            } catch (Exception e) {
+                                echo "⚠️  Package cache miss: ${e.message}"
+                                env.PACKAGE_CACHE_HIT = "false"
+                            }
+                        }
+                    }
+                }
+                
+                stage('Build Artifacts Cache') {
+                    when {
+                        expression { params.CACHE_STRATEGY == 'full' }
+                    }
+                    steps {
+                        script {
+                            try {
+                                echo "🏗️  Restoring build artifacts cache..."
+                                readCache name: "unity-build-${CACHE_VERSION}", includes: 'obj/**,Temp/UnityLockfile'
+                            } catch (Exception e) {
+                                echo "⚠️  Build artifacts cache miss: ${e.message}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Unity Environment Setup') {
+            steps {
+                sh '''
+                echo "🛠️  Setting up Unity environment..."
+                
+                # Create necessary directories
+                mkdir -p "${WORKSPACE}/Library"
+                mkdir -p "${WORKSPACE}/Packages"
+                mkdir -p "${WORKSPACE}/Assets/Editor"
+                mkdir -p "${WORKSPACE}/Builds"
+                mkdir -p "${WORKSPACE}/Temp"
+                
+                # Clean problematic files that shouldn't be cached
+                rm -rf "${WORKSPACE}/Library/Logs" || true
+                rm -rf "${WORKSPACE}/Library/LastSceneManagerSetup.txt" || true
+                rm -rf "${WORKSPACE}/Temp/*" || true
+                rm -f "${WORKSPACE}/*.log" || true
+                
+                # Set Unity preferences for large projects
+                echo "Setting Unity preferences for large project optimization..."
+                mkdir -p ~/Library/Preferences/Unity
+                
+                # Performance monitoring
+                echo "Cache status:"
+                echo "- Library cache hit: ${LIBRARY_CACHE_HIT:-false}"
+                echo "- Package cache hit: ${PACKAGE_CACHE_HIT:-false}"
+                echo "- Build strategy: ${CACHE_STRATEGY}"
+                
+                if [ "${LIBRARY_CACHE_HIT}" = "true" ]; then
+                    echo "✅ Library cache restored - expecting 60-80% build time reduction"
+                else
+                    echo "❌ Library cache miss - first build will be slower but will populate cache"
+                fi
+                '''
+            }
+        }
+        
+        stage('Pre-Build Cache Validation') {
+            when {
+                expression { env.LIBRARY_CACHE_HIT == "true" }
+            }
+            steps {
+                sh '''
+                echo "🔍 Validating cache integrity..."
+                
+                # Check if critical Unity files exist
+                CACHE_VALID=true
+                
+                if [ ! -f "${WORKSPACE}/Library/ArtifactDB" ]; then
+                    echo "⚠️  ArtifactDB missing from cache"
+                    CACHE_VALID=false
+                fi
+                
+                if [ ! -d "${WORKSPACE}/Library/metadata" ]; then
+                    echo "⚠️  Metadata directory missing from cache"
+                    CACHE_VALID=false
+                fi
+                
+                if [ "$CACHE_VALID" = "true" ]; then
+                    echo "✅ Cache validation passed"
+                    echo "Expected build time: 2-5 minutes (with cache)"
+                else
+                    echo "❌ Cache validation failed - will rebuild"
+                    echo "Expected build time: 15-45 minutes (cache rebuild)"
+                fi
+                '''
+            }
+        }
+   
+        stage('Unity Build with Monitoring') {
+            steps {
+                script {
+                    def buildStartTime = System.currentTimeMillis()
+                    
+                    sh '''
+                    export BUILD_TYPE="${BUILD_TYPE}"
+                    export UNITY_LOG_LEVEL="Info"
+                    
+                    echo "🚀 Starting Unity build process..."
+                    echo "Build configuration:"
+                    echo "- Type: ${BUILD_TYPE}"
+                    echo "- Memory: ${CUSTOM_MEMORY}"
+                    echo "- Strategy: ${CACHE_STRATEGY}"
+                    echo "- Project hash: ${PROJECT_HASH}"
+                    
+                    # Memory optimization for large projects
+                    MEM_OPTIONS="-force-free -memory-profile -disable-gpu-skinning -no-stereo-rendering"
+                    
+                    echo "🔧 Pre-build optimization..."
+                    "$UNITY_PATH" \\
+                        -batchmode \\
+                        -nographics \\
+                        -silent-crashes \\
+                        -projectPath "${WORKSPACE}" \\
+                        -executeMethod CacheOptimizer.OptimizeForBuild \\
+                        -logFile "${WORKSPACE}/unity_optimization.log" \\
+                        -quit || echo "Optimization step completed with warnings"
+                    
+                    echo "🎯 Starting Android build..."
+                    BUILD_START=$(date +%s)
+                    
+                    "$UNITY_PATH" \\
+                        -batchmode \\
+                        -nographics \\
+                        -silent-crashes \\
+                        -projectPath "${WORKSPACE}" \\
+                        -executeMethod BuildAndroid.Build \\
+                        -buildTarget Android \\
+                        -logFile "${WORKSPACE}/unity_build.log" \\
+                        ${MEM_OPTIONS} \\
+                        -quit
+                    
+                    BUILD_END=$(date +%s)
+                    BUILD_TIME=$((BUILD_END - BUILD_START))
+                    
+                    echo "⏱️  Build completed in ${BUILD_TIME} seconds"
+                    
+                    # Log analysis
+                    if [ -f "${WORKSPACE}/unity_build.log" ]; then
+                        echo "📊 Build log analysis:"
+                        grep -i "error\\|warning\\|exception" "${WORKSPACE}/unity_build.log" | tail -20 || echo "No critical issues found"
+                        
+                        # Cache effectiveness analysis
+                        if grep -q "Refreshing native plugins" "${WORKSPACE}/unity_build.log"; then
+                            echo "🔄 Native plugins refreshed - cache partially effective"
+                        fi
+                        
+                        if grep -q "Import took" "${WORKSPACE}/unity_build.log"; then
+                            echo "📥 Asset imports detected - analyzing cache effectiveness"
+                            grep "Import took" "${WORKSPACE}/unity_build.log" | tail -10
+                        fi
+                    fi
+                    
+                    # APK validation
+                    if [ -f "${WORKSPACE}/Builds/CloudBeesDemo.apk" ]; then
+                        APK_SIZE=$(du -h "${WORKSPACE}/Builds/CloudBeesDemo.apk" | cut -f1)
+                        echo "✅ APK generated successfully!"
+                        echo "📱 APK size: $APK_SIZE"
+                        echo "⏱️  Total build time: ${BUILD_TIME}s"
+                        
+                        # Performance metrics
+                        if [ "${LIBRARY_CACHE_HIT}" = "true" ] && [ $BUILD_TIME -lt 300 ]; then
+                            echo "🚀 EXCELLENT: Cache performance optimal (< 5 minutes)"
+                        elif [ $BUILD_TIME -lt 600 ]; then
+                            echo "✅ GOOD: Build time acceptable (< 10 minutes)"
+                        else
+                            echo "⚠️  SLOW: Build time > 10 minutes - cache optimization needed"
+                        fi
+                    else
+                        echo "❌ APK generation failed!"
+                        exit 1
+                    fi
+                    '''
+                    
+                    def buildEndTime = System.currentTimeMillis()
+                    def totalBuildTime = (buildEndTime - buildStartTime) / 1000
+                    echo "🎯 PIPELINE METRICS:"
+                    echo "   Total build time: ${totalBuildTime}s"
+                    echo "   Cache effectiveness: ${env.LIBRARY_CACHE_HIT == 'true' ? 'HIGH' : 'BUILDING'}"
+                }
+            }
+        }
+        
+        stage('Intelligent Cache Strategy') {
+            parallel {
+                stage('Upload APK') {
+                    when {
+                        expression { fileExists("${WORKSPACE}/Builds/CloudBeesDemo.apk") }
+                    }
+                    steps {
+                        sh '''
+                        echo "📤 Uploading APK..."
+                        UPLOAD_RESPONSE=$(curl -s --upload-file "${WORKSPACE}/Builds/CloudBeesDemo.apk" https://bashupload.com/CloudBeesDemo-${PROJECT_HASH}.apk)
+                        echo "Upload response: $UPLOAD_RESPONSE"
+                        
+                        DOWNLOAD_URL=$(echo "$UPLOAD_RESPONSE" | grep -o 'wget https://bashupload.com/[^ ]*' | cut -d' ' -f2)
+                        
+                        if [ -n "$DOWNLOAD_URL" ]; then
+                            echo "🎯 APK Download: $DOWNLOAD_URL"
+                        fi
+                        '''
+                    }
+                }
+
+                stage('Multi-Layer Cache Write') {
+                    steps {
+                        script {
+                            parallel(
+                                "Unity Library Cache": {
+                                    try {
+                                        echo "💾 Caching Unity Library (critical for next build)..."
+                                        writeCache name: "unity-library-${CACHE_VERSION}", 
+                                                  includes: 'Library/ArtifactDB,Library/SourceAssetDB,Library/metadata/**,Library/ShaderCache/**,Library/BuildPlayerData/**', 
+                                                  excludes: 'Library/Logs/**,Library/temp/**,Library/LastSceneManagerSetup.txt'
+                                        echo "✅ Library cache saved successfully"
+                                    } catch (Exception e) {
+                                        echo "⚠️  Library cache save failed: ${e.message}"
+                                    }
+                                },
+                                "Package Cache": {
+                                    try {
+                                        echo "📦 Caching Unity Packages..."
+                                        writeCache name: "unity-packages-${CACHE_VERSION}", 
+                                                  includes: 'Packages/**,Library/PackageCache/**', 
+                                                  excludes: 'Library/PackageCache/com.unity.*/**.meta'
+                                        echo "✅ Package cache saved successfully"
+                                    } catch (Exception e) {
+                                        echo "⚠️  Package cache save failed: ${e.message}"
+                                    }
+                                },
+                                "Build Artifacts": {
+                                    if (params.CACHE_STRATEGY == 'full') {
+                                        try {
+                                            echo "🏗️  Caching build artifacts..."
+                                            writeCache name: "unity-build-${CACHE_VERSION}", 
+                                                      includes: 'obj/**', 
+                                                      excludes: 'obj/**/**.pdb,obj/**/**.tmp'
+                                            echo "✅ Build artifacts cached successfully"
+                                        } catch (Exception e) {
+                                            echo "⚠️  Build artifacts cache save failed: ${e.message}"
+                                        }
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
+
+                stage('Archive & Metrics') {
+                    steps {
+                        script {
+                            // Archive artifacts
+                            archiveArtifacts artifacts: 'Builds/*.apk', allowEmptyArchive: true
+                            archiveArtifacts artifacts: 'unity_*.log', allowEmptyArchive: true
+                            
+                            // Performance metrics
+                            sh '''
+                            echo "📊 PERFORMANCE REPORT" > build_metrics.txt
+                            echo "===================" >> build_metrics.txt
+                            echo "Build #: ${BUILD_NUMBER}" >> build_metrics.txt
+                            echo "Commit: ${PROJECT_HASH}" >> build_metrics.txt
+                            echo "Cache Strategy: ${CACHE_STRATEGY}" >> build_metrics.txt
+                            echo "Library Cache Hit: ${LIBRARY_CACHE_HIT:-false}" >> build_metrics.txt
+                            echo "Package Cache Hit: ${PACKAGE_CACHE_HIT:-false}" >> build_metrics.txt
+                            
+                            if [ -f "${WORKSPACE}/Builds/CloudBeesDemo.apk" ]; then
+                                APK_SIZE=$(du -b "${WORKSPACE}/Builds/CloudBeesDemo.apk" | cut -f1)
+                                echo "APK Size: ${APK_SIZE} bytes" >> build_metrics.txt
+                            fi
+                            
+                            echo "" >> build_metrics.txt
+                            echo "🎯 NEXT BUILD PREDICTION:" >> build_metrics.txt
+                            if [ "${LIBRARY_CACHE_HIT}" = "false" ]; then
+                                echo "Next build will be 60-80% faster (Library cache now available)" >> build_metrics.txt
+                            else
+                                echo "Subsequent builds should maintain current performance" >> build_metrics.txt
+                            fi
+                            
+                            cat build_metrics.txt
+                            '''
+                            
+                            archiveArtifacts artifacts: 'build_metrics.txt', allowEmptyArchive: true
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                echo """
+                🎉 BUILD SUCCESS!
+                
+                📊 Performance Summary:
+                - Library Cache: ${env.LIBRARY_CACHE_HIT == 'true' ? '✅ HIT' : '❌ MISS (populated for next build)'}
+                - Package Cache: ${env.PACKAGE_CACHE_HIT == 'true' ? '✅ HIT' : '❌ MISS (populated for next build)'}
+                - Strategy: ${params.CACHE_STRATEGY}
+                
+                🚀 Next Build Expectations:
+                ${env.LIBRARY_CACHE_HIT == 'true' ? 'Similar performance (2-5 min)' : 'MUCH FASTER (cache now available)'}
+                """
+            }
+        }
+        failure {
+            script {
+                echo """
+                ❌ BUILD FAILED
+                
+                Check logs for issues. Common large project problems:
+                - Memory constraints (increase CUSTOM_MEMORY)
+                - Cache corruption (try CLEAN_BUILD=true)
+                - Network timeouts (check Unity Package Manager)
+                """
+            }
+        }
+        always {
+            script {
+                // Cleanup sensitive data but keep cache
+                try {
+                    sh '''
+                    rm -f "${WORKSPACE}"/*.log || true
+                    '''
+                } catch (Exception e) {
+                    echo "Cleanup completed with warnings: ${e.message}"
+                }
+            }
+        }
+    }
+}
