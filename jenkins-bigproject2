@@ -1,0 +1,108 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Layered Cache Read') {
+            parallel {
+                stage('Git Structure Cache') {
+                    steps {
+                        readCache {
+                            key "git-structure-${env.JOB_NAME}-${env.GIT_COMMIT}"
+                            includes([
+                                '.git/config',
+                                '.git/modules/**',
+                                '.gitmodules'
+                            ])
+                            restoreKeys(["git-structure-${env.JOB_NAME}-"])
+                        }
+                    }
+                }
+                
+                stage('Unity Assets Cache') {
+                    steps {
+                        readCache {
+                            key "unity-assets-huge-${sh(script: 'find . -name "*.meta" -path "*/Assets/*" | head -20 | xargs ls -la | md5sum | cut -d" " -f1 || echo "none"', returnStdout: true).trim()}"
+                            includes([
+                                'Assets/**',
+                                '**/Assets/**'  // Assets dans submodules
+                            ])
+                            restoreKeys(['unity-assets-huge-'])
+                        }
+                    }
+                }
+                
+                stage('Project Files Cache') {
+                    steps {
+                        readCache {
+                            key "unity-project-${env.JOB_NAME}-${env.BRANCH_NAME}"
+                            includes([
+                                'ProjectSettings/**',
+                                'Packages/**',
+                                '*.sln',
+                                '*.csproj'
+                            ])
+                            restoreKeys(["unity-project-${env.JOB_NAME}-"])
+                        }
+                    }
+                }
+            }
+        }
+        
+        stage('Minimal Git Sync') {
+            steps {
+                script {
+                    sh '''
+                    # Synchronisation minimale pour machine physique
+                    if [ -d ".git" ]; then
+                        # Update léger
+                        git fetch --depth=1
+                        git reset --hard origin/${BRANCH_NAME}
+                        git submodule update --recursive --jobs=8
+                    else
+                        # Clone initial optimisé
+                        git clone --depth=1 --recurse-submodules \
+                            --shallow-submodules --jobs=8 ${GIT_URL} .
+                    fi
+                    '''
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'echo "Unity build with cached workspace and submodules"'
+            }
+        }
+        
+        stage('Layered Cache Write') {
+            parallel {
+                stage('Git Structure Write') {
+                    steps {
+                        writeCache {
+                            key "git-structure-${env.JOB_NAME}-${env.GIT_COMMIT}"
+                            includes(['.git/config', '.git/modules/**', '.gitmodules'])
+                        }
+                    }
+                }
+                
+                stage('Unity Assets Write') {
+                    steps {
+                        writeCache {
+                            key "unity-assets-huge-${sh(script: 'find . -name "*.meta" -path "*/Assets/*" | head -20 | xargs ls -la | md5sum | cut -d" " -f1', returnStdout: true).trim()}"
+                            includes(['Assets/**', '**/Assets/**'])
+                        }
+                    }
+                }
+                
+                stage('Project Files Write') {
+                    steps {
+                        writeCache {
+                            key "unity-project-${env.JOB_NAME}-${env.BRANCH_NAME}"
+                            includes(['ProjectSettings/**', 'Packages/**', '*.sln', '*.csproj'])
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
