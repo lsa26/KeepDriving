@@ -1,0 +1,161 @@
+pipeline {
+    agent any
+    
+    environment {
+        // Cache key intelligent pour submodules
+        SUBMODULES_HASH = sh(returnStdout: true, script: '''
+            git submodule status | md5sum | cut -d" " -f1 || echo "no-submodules"
+        ''').trim()
+        
+        UNITY_CACHE_KEY = "unity-huge-${env.JOB_NAME}-${SUBMODULES_HASH}-${sh(returnStdout: true, script: 'find Assets -maxdepth 2 -name "*.meta" | head -5 | xargs ls -la | md5sum | cut -d" " -f1 || echo "default"').trim()}"
+    }
+    
+    stages {
+        stage('Read Workspace Cache') {
+            steps {
+                script {
+                    readCache {
+                        key "${UNITY_CACHE_KEY}"
+                        
+                        // Cache complet du workspace Unity + submodules
+                        includes([
+                            'Assets/**',
+                            'ProjectSettings/**',
+                            'Packages/**',
+                            // Inclure les submodules cachés
+                            '.git/modules/**',
+                            '**/Assets/**',  // Assets dans submodules
+                            '**/*.sln',
+                            '**/*.csproj'
+                        ])
+                        
+                        excludes([
+                            'Library/**',
+                            'Temp/**',
+                            'obj/**',
+                            'Logs/**',
+                            '.git/objects/**',  // Éviter les gros objets Git
+                            '.git/refs/**'
+                        ])
+                        
+                        restoreKeys([
+                            "unity-huge-${env.JOB_NAME}-${SUBMODULES_HASH}-",
+                            "unity-huge-${env.JOB_NAME}-",
+                            "unity-huge-"
+                        ])
+                    }
+                }
+            }
+        }
+        
+        stage('Smart Git Sync') {
+            steps {
+                script {
+                    sh '''
+                    # Vérifier si le repo existe déjà (machine physique)
+                    if [ -d ".git" ]; then
+                        echo "Repository exists - doing incremental update"
+                        
+                        # Fetch seulement les nouveaux commits
+                        git fetch origin --depth=1
+                        
+                        # Reset vers la branche cible
+                        git reset --hard origin/${BRANCH_NAME}
+                        
+                        # Update submodules intelligemment
+                        git submodule update --init --recursive --depth=1 --jobs=4
+                        
+                    else
+                        echo "Fresh clone with shallow submodules"
+                        
+                        # Clone shallow du repo principal
+                        git clone --depth=1 --recurse-submodules --shallow-submodules \
+                            --jobs=4 ${GIT_URL} .
+                        
+                        # Checkout de la bonne branche
+                        git checkout ${BRANCH_NAME}
+                    fi
+                    '''
+                }
+            }
+        }
+        
+        stage('Unity Optimization') {
+            steps {
+                script {
+                    sh '''
+                    # Nettoyer seulement les fichiers temporaires Unity
+                    find . -name "Temp" -type d -exec rm -rf {} + 2>/dev/null || true
+                    find . -name "Logs" -type d -exec rm -rf {} + 2>/dev/null || true
+                    
+                    # Vérifier les submodules Unity
+                    find . -name "*.meta" -path "*/Assets/*" | wc -l
+                    echo "Assets found in submodules and main project"
+                    '''
+                }
+            }
+        }
+        
+        stage('Unity Build') {
+            steps {
+                script {
+                    sh '''
+                    # Build Unity avec tous les submodules
+                    unity-editor -batchmode -quit \
+                        -projectPath . \
+                        -buildTarget ${BUILD_TARGET:-StandaloneWindows64} \
+                        -logFile unity-build.log
+                    '''
+                }
+            }
+        }
+        
+        stage('Write Workspace Cache') {
+            steps {
+                script {
+                    writeCache {
+                        key "${UNITY_CACHE_KEY}"
+                        
+                        // Cache stratégique pour gros projet
+                        includes([
+                            'Assets/**',
+                            'ProjectSettings/**',
+                            'Packages/**',
+                            // Submodules essentiels
+                            '.gitmodules',
+                            '.git/config',
+                            '.git/modules/**/config',
+                            // Assets des submodules
+                            '**/Assets/**',
+                            '**/*.meta',
+                            '*.sln',
+                            '*.csproj'
+                        ])
+                        
+                        excludes([
+                            'Library/**',
+                            'Temp/**',
+                            'obj/**',
+                            'Logs/**',
+                            'Build/**',
+                            // Éviter les gros objets Git
+                            '.git/objects/**',
+                            '.git/logs/**',
+                            '**/*.log'
+                        ])
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            // Nettoyage léger
+            sh '''
+            find . -name "*.log" -delete 2>/dev/null || true
+            find . -name "Temp" -type d -exec rm -rf {} + 2>/dev/null || true
+            '''
+        }
+    }
+}
