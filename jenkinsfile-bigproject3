@@ -1,0 +1,221 @@
+pipeline {
+    agent any
+    
+    environment {
+        // Clé basée sur les vrais assets critiques seulement
+        SAFE_CACHE_KEY = "unity-megaproject-${env.JOB_NAME}-${sh(returnStdout: true, script: 'find Assets -maxdepth 1 -type f -name "*.meta" | sort | xargs cat | md5sum | cut -d" " -f1 || echo "fallback"').trim()}"
+    }
+    
+    stages {
+        stage('Read Ultra-Safe Cache') {
+            steps {
+                script {
+                    readCache {
+                        key "${SAFE_CACHE_KEY}"
+                        
+                        // SEULEMENT les fichiers que Unity ne recrée JAMAIS
+                        includes([
+                            // Assets sources (Unity ne les recrée jamais)
+                            'Assets/**/*.cs',
+                            'Assets/**/*.prefab', 
+                            'Assets/**/*.scene',
+                            'Assets/**/*.asset',
+                            'Assets/**/*.mat',
+                            'Assets/**/*.controller',
+                            'Assets/**/*.anim',
+                            'Assets/**/*.fbx',
+                            'Assets/**/*.png',
+                            'Assets/**/*.jpg',
+                            'Assets/**/*.wav',
+                            'Assets/**/*.mp3',
+                            'Assets/**/*.mp4',
+                            'Assets/**/*.shader',
+                            'Assets/**/*.compute',
+                            'Assets/**/*.hlsl',
+                            
+                            // Fichiers meta (Unity les garde si assets présents)
+                            'Assets/**/*.meta',
+                            
+                            // Configuration projet (Unity ne les touche pas)
+                            'ProjectSettings/ProjectSettings.asset',
+                            'ProjectSettings/TagManager.asset',
+                            'ProjectSettings/LayerManager.asset',
+                            'ProjectSettings/NavMeshAreas.asset',
+                            'ProjectSettings/NetworkManager.asset',
+                            'ProjectSettings/Physics2DSettings.asset',
+                            'ProjectSettings/PhysicsManager.asset',
+                            'ProjectSettings/QualitySettings.asset',
+                            'ProjectSettings/TimeManager.asset',
+                            'ProjectSettings/AudioManager.asset',
+                            'ProjectSettings/InputManager.asset',
+                            'ProjectSettings/GraphicsSettings.asset',
+                            'ProjectSettings/DynamicsManager.asset',
+                            
+                            // Packages (Unity Package Manager)
+                            'Packages/manifest.json',
+                            'Packages/packages-lock.json',
+                            
+                            // Solution/Project files (jamais touchés par Unity)
+                            '*.sln',
+                            '*.csproj',
+                            'Assembly-*.csproj',
+                            
+                            // Git (structure du repo)
+                            '.gitignore',
+                            '.gitmodules',
+                            '.git/config',
+                            '.git/HEAD',
+                            '.git/refs/**',
+                            '.git/modules/**/config',
+                            '.git/modules/**/HEAD'
+                        ])
+                        
+                        // ABSOLUMENT EXCLURE tout ce que Unity recrée
+                        excludes([
+                            // Unity recrée TOUJOURS ces dossiers
+                            'Library/**',           // Unity DB, cache, etc.
+                            'Temp/**',              // Fichiers temporaires
+                            'obj/**',               // Compilation .NET
+                            'Logs/**',              // Logs Unity
+                            'Build/**',             // Builds
+                            'Builds/**',            // Builds alternatives
+                            
+                            // Git objects (trop lourds)
+                            '.git/objects/**',
+                            '.git/logs/**',
+                            '.git/lfs/**',
+                            
+                            // Fichiers temporaires divers
+                            '**/*.tmp',
+                            '**/*.temp',
+                            '**/*.log',
+                            '**/Thumbs.db',
+                            '**/.DS_Store'
+                        ])
+                        
+                        restoreKeys([
+                            "unity-megaproject-${env.JOB_NAME}-",
+                            "unity-megaproject-"
+                        ])
+                    }
+                }
+            }
+        }
+        
+        stage('Minimal Git Operations') {
+            steps {
+                script {
+                    sh '''
+                    echo "🔍 Checking workspace state after cache restore..."
+                    
+                    # Vérifier ce qui existe déjà
+                    if [ -d "Assets" ]; then
+                        echo "✅ Assets directory found in cache"
+                        find Assets -maxdepth 2 -type f | wc -l | awk '{print "Cached files in Assets: " $1}'
+                    fi
+                    
+                    if [ -d ".git" ]; then
+                        echo "✅ Git repository structure found in cache"
+                        
+                        # Synchronisation minimale
+                        echo "🔄 Minimal git sync..."
+                        git fetch origin --depth=1 ${BRANCH_NAME}
+                        git reset --hard origin/${BRANCH_NAME}
+                        
+                        # Submodules ultra-rapide
+                        git submodule update --init --recursive --depth=1 --jobs=8
+                        
+                    else
+                        echo "❌ No git cache - doing minimal clone"
+                        # Clone ultra-shallow
+                        git clone --depth=1 --recurse-submodules --shallow-submodules \
+                            --filter=blob:limit=100M --jobs=8 ${GIT_URL} .
+                        git checkout ${BRANCH_NAME}
+                    fi
+                    
+                    echo "📊 Final workspace size:"
+                    du -sh . 2>/dev/null | awk '{print "Total workspace: " $1}'
+                    '''
+                }
+            }
+        }
+        
+        stage('Unity Safe Setup') {
+            steps {
+                script {
+                    sh '''
+                    echo "🎮 Unity workspace preparation..."
+                    
+                    # Supprimer SEULEMENT les dossiers que Unity recrée de toute façon
+                    rm -rf Temp/ Logs/ obj/
+                    
+                    # Laisser Library/ si il existe dans le cache (Unity l'utilisera)
+                    if [ -d "Library" ]; then
+                        echo "⚠️  Library directory exists - Unity will check and rebuild if needed"
+                    fi
+                    
+                    # Vérification intégrité Assets
+                    echo "🔍 Assets integrity check:"
+                    find Assets -name "*.meta" | wc -l | awk '{print "Meta files: " $1}'
+                    find Assets -name "*.cs" | wc -l | awk '{print "C# scripts: " $1}'
+                    find Assets -name "*.prefab" | wc -l | awk '{print "Prefabs: " $1}'
+                    '''
+                }
+            }
+        }
+        
+        stage('Write Conservative Cache') {
+            steps {
+                script {
+                    writeCache {
+                        key "${SAFE_CACHE_KEY}"
+                        
+                        // Même liste ultra-conservative
+                        includes([
+                            'Assets/**/*.cs',
+                            'Assets/**/*.prefab', 
+                            'Assets/**/*.scene',
+                            'Assets/**/*.asset',
+                            'Assets/**/*.mat',
+                            'Assets/**/*.controller',
+                            'Assets/**/*.anim',
+                            'Assets/**/*.fbx',
+                            'Assets/**/*.png',
+                            'Assets/**/*.jpg',
+                            'Assets/**/*.wav',
+                            'Assets/**/*.mp3',
+                            'Assets/**/*.mp4',
+                            'Assets/**/*.shader',
+                            'Assets/**/*.compute',
+                            'Assets/**/*.hlsl',
+                            'Assets/**/*.meta',
+                            'ProjectSettings/*.asset',
+                            'Packages/manifest.json',
+                            'Packages/packages-lock.json',
+                            '*.sln',
+                            '*.csproj',
+                            '.gitignore',
+                            '.gitmodules',
+                            '.git/config',
+                            '.git/HEAD',
+                            '.git/refs/**',
+                            '.git/modules/**/config'
+                        ])
+                        
+                        excludes([
+                            'Library/**',
+                            'Temp/**', 
+                            'obj/**',
+                            'Logs/**',
+                            'Build/**',
+                            '.git/objects/**',
+                            '.git/logs/**',
+                            '**/*.log',
+                            '**/*.tmp'
+                        ])
+                    }
+                }
+            }
+        }
+    }
+}
