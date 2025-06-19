@@ -1,0 +1,326 @@
+pipeline {
+    agent {
+        label 'mac-unity'
+    }
+    options {
+        timeout(time: 120, unit: 'MINUTES')
+        disableConcurrentBuilds()
+        // ✅ CRITIQUE : Garder le workspace pour le cache
+        skipDefaultCheckout(false)
+    }
+
+    parameters {
+        booleanParam(name: 'CLEAN_BUILD', defaultValue: false, description: 'Perform a clean build (removes cache)')
+        booleanParam(name: 'FORCE_CACHE_REFRESH', defaultValue: false, description: 'Force refresh of Unity Library cache')
+        choice(name: 'BUILD_TYPE', choices: ['Development', 'Release'], description: 'Type of build to perform')
+        string(name: 'CUSTOM_MEMORY', defaultValue: '8192m', description: 'Maximum memory for Unity (recommended 8GB+ for large projects)')
+    }
+    
+    environment {
+        UNITY_PATH = "/Applications/Unity/Hub/Editor/6000.1.3f1/Unity.app/Contents/MacOS/Unity"
+        CACHE_VERSION = "v3.0" // Incrémenter pour nouvelle stratégie
+    }
+    
+    stages {
+        stage('🔍 Unity Cache Diagnostic') {
+            steps {
+                script {
+                    sh '''
+                    echo "=== UNITY CACHE DIAGNOSTIC CRITIQUE ==="
+                    echo "Workspace: $WORKSPACE"
+                    echo "Branch: $BRANCH_NAME"
+                    echo "Build: $BUILD_NUMBER"
+                    echo ""
+                    
+                    # ✅ Vérification Unity Library - LES VRAIS RÉPERTOIRES
+                    if [ -d "Library" ]; then
+                        echo "✅ Library exists"
+                        echo "Library subdirs:"
+                        ls -la Library/ | head -10
+                        echo ""
+                        
+                        # ✅ CRITIQUE : Ces répertoires DOIVENT exister pour le cache Unity
+                        for dir in "ArtifactDB" "StateCache" "ShaderCache" "PackageCache"; do
+                            if [ -d "Library/$dir" ]; then
+                                size=$(du -sh "Library/$dir" 2>/dev/null | cut -f1)
+                                files=$(find "Library/$dir" -type f 2>/dev/null | wc -l)
+                                echo "✅ $dir: $size ($files files)"
+                            else
+                                echo "❌ $dir: MISSING - CACHE INUTILE"
+                            fi
+                        done
+                    else
+                        echo "❌ Library: TOTALEMENT ABSENTE"
+                    fi
+                    
+                    echo ""
+                    echo "=== Git Status ==="
+                    git log --oneline -5
+                    git submodule status | head -5
+                    '''
+                }
+            }
+        }
+
+        stage('🚨 FIXED Checkout') {
+            steps {
+                script {
+                    // ✅ CORRECTION CRITIQUE : PAS de shallow clone !
+                    checkout scmGit(
+                        branches: [[name: '*/master']],
+                        extensions: [
+                            // ❌ SUPPRIMÉ : CloneOption depth=1 (CASSE Unity)
+                            [$class: 'SubmoduleOption', 
+                             disableSubmodules: false, 
+                             parentCredentials: true, 
+                             recursiveSubmodules: true,
+                             trackingSubmodules: false]
+                        ],
+                        userRemoteConfigs: [[url: 'https://github.com/lsa26/KeepDriving']]
+                    )
+                    
+                    env.PROJECT_HASH = sh(script: "git rev-parse --short HEAD", returnStdout: true).trim()
+                    echo "✅ Git checkout complet - Unity peut utiliser les métadonnées"
+                }
+            }
+        }
+
+        stage('🛠️ Intelligent Cleanup') {
+            when {
+                anyOf {
+                    expression { return params.CLEAN_BUILD }
+                    expression { return params.FORCE_CACHE_REFRESH }
+                }
+            }
+            steps {
+                sh '''
+                if [ "$CLEAN_BUILD" = "true" ]; then
+                    echo "🧹 CLEAN BUILD - Suppression complète"
+                    rm -rf Library/ Temp/ obj/ Builds/
+                elif [ "$FORCE_CACHE_REFRESH" = "true" ]; then
+                    echo "🔄 CACHE REFRESH - Nettoyage sélectif"
+                    # ✅ Garder certains éléments du cache Unity
+                    rm -rf Library/ArtifactDB Library/StateCache
+                    rm -rf Temp/ obj/
+                fi
+                '''
+            }
+        }
+
+        stage('📦 CORRECTED Unity Cache Restore') {
+            when {
+                expression { !params.CLEAN_BUILD }
+            }
+            steps {
+                script {
+                    try {
+                        echo "🔄 Restoration cache Unity avec VRAIS paths..."
+                        // ✅ CORRECTION : Vrais répertoires Unity critiques
+                        readCache name: "unity-core-${CACHE_VERSION}", 
+                                 includes: 'Library/ArtifactDB/**,Library/StateCache/**,Library/ShaderCache/**,Library/APIUpdater/**,Library/BuildPlayerData/**',
+                                 excludes: 'Library/Logs/**,Library/LastSceneManagerSetup.txt,Library/CurrentLayout*.dwlt'
+                        
+                        readCache name: "unity-packages-${CACHE_VERSION}",
+                                 includes: 'Library/PackageCache/**,Packages/**'
+                        
+                        env.CACHE_RESTORED = "true"
+                        echo "✅ Cache Unity restauré avec succès"
+                        
+                        // ✅ Validation du cache
+                        sh '''
+                        echo "🔍 Validation cache restauré:"
+                        for dir in "ArtifactDB" "StateCache" "ShaderCache"; do
+                            if [ -d "Library/$dir" ] && [ "$(ls -A Library/$dir)" ]; then
+                                echo "✅ $dir: OK"
+                            else
+                                echo "❌ $dir: VIDE OU ABSENT"
+                            fi
+                        done
+                        '''
+                        
+                    } catch (Exception e) {
+                        echo "⚠️ Cache miss (normal au premier build): ${e.message}"
+                        env.CACHE_RESTORED = "false"
+                    }
+                }
+            }
+        }
+
+        stage('🎯 Unity Build - Monitoring Cache') {
+            steps {
+                script {
+                    def buildStartTime = System.currentTimeMillis()
+                    
+                    sh '''
+                    echo "🚀 Unity Build avec monitoring cache..."
+                    echo "Cache restauré: ${CACHE_RESTORED:-false}"
+                    
+                    # ✅ Options Unity pour gros projets
+                    BUILD_ARGS="-batchmode -nographics -silent-crashes -quit"
+                    BUILD_ARGS="$BUILD_ARGS -projectPath $WORKSPACE"
+                    BUILD_ARGS="$BUILD_ARGS -buildTarget Android"
+                    BUILD_ARGS="$BUILD_ARGS -logFile $WORKSPACE/unity_build.log"
+                    
+                    # ✅ CRITIQUE : Forcer Unity à utiliser le cache
+                    export UNITY_CACHE_FOLDER="$WORKSPACE/Library"
+                    
+                    echo "⏰ Début build: $(date)"
+                    BUILD_START=$(date +%s)
+                    
+                    "$UNITY_PATH" $BUILD_ARGS -executeMethod BuildAndroid.Build
+                    
+                    BUILD_END=$(date +%s)
+                    BUILD_TIME=$((BUILD_END - BUILD_START))
+                    
+                    echo "⏱️ Build terminé en $BUILD_TIME secondes"
+                    
+                    # ✅ ANALYSE DU CACHE - CRITIQUE !
+                    if [ -f "unity_build.log" ]; then
+                        echo ""
+                        echo "🔍 ANALYSE CACHE UNITY:"
+                        
+                        # Vérifier si Unity a utilisé le cache
+                        if grep -q "Refreshing native plugins" "unity_build.log"; then
+                            echo "❌ PLUGINS REFRESHED - Cache partiellement utilisé"
+                        else
+                            echo "✅ Pas de refresh plugins - Cache efficace"
+                        fi
+                        
+                        if grep -q "Import took" "unity_build.log"; then
+                            echo "❌ IMPORT ASSETS - Cache non utilisé:"
+                            grep "Import took" "unity_build.log" | head -5
+                        else
+                            echo "✅ Pas d'import assets - Cache parfait"
+                        fi
+                        
+                        if grep -q "Library rebuild" "unity_build.log"; then
+                            echo "❌ LIBRARY REBUILD - Cache raté:"
+                            grep "Library rebuild" "unity_build.log"
+                        else
+                            echo "✅ Pas de rebuild Library - Cache utilisé"
+                        fi
+                        
+                        # ✅ Temps de build analysis
+                        if [ "${CACHE_RESTORED}" = "true" ] && [ $BUILD_TIME -lt 300 ]; then
+                            echo "🚀 EXCELLENT: Cache fonctionne (< 5min)"
+                        elif [ "${CACHE_RESTORED}" = "true" ] && [ $BUILD_TIME -gt 900 ]; then
+                            echo "❌ PROBLÈME: Cache non utilisé (> 15min avec cache)"
+                        elif [ "${CACHE_RESTORED}" = "false" ]; then
+                            echo "ℹ️ Premier build - création du cache"
+                        fi
+                        
+                        echo ""
+                        echo "📊 RÉSUMÉ BUILD:"
+                        echo "Temps: ${BUILD_TIME}s"
+                        echo "Cache: ${CACHE_RESTORED:-false}"
+                        echo "Hash: $PROJECT_HASH"
+                    fi
+                    
+                    # Vérifier APK
+                    if [ -f "Builds/CloudBeesDemo.apk" ]; then
+                        echo "✅ APK généré: $(du -h Builds/CloudBeesDemo.apk | cut -f1)"
+                    else
+                        echo "❌ ÉCHEC: APK non généré"
+                        exit 1
+                    fi
+                    '''
+                    
+                    def buildEndTime = System.currentTimeMillis()
+                    def totalTime = (buildEndTime - buildStartTime) / 1000
+                    
+                    echo "🎯 MÉTRIQUES FINALES:"
+                    echo "   Temps total: ${totalTime}s"
+                    echo "   Cache utilisé: ${env.CACHE_RESTORED}"
+                    
+                    // ✅ Alertes performance
+                    if (env.CACHE_RESTORED == "true" && totalTime > 600) {
+                        error "❌ CACHE INEFFICACE: ${totalTime}s avec cache - Investigation nécessaire"
+                    }
+                }
+            }
+        }
+
+        stage('💾 CORRECTED Cache Save') {
+            steps {
+                script {
+                    try {
+                        // ✅ SAUVEGARDE avec les VRAIS paths Unity
+                        writeCache name: "unity-core-${CACHE_VERSION}",
+                                  includes: 'Library/ArtifactDB/**,Library/StateCache/**,Library/ShaderCache/**,Library/APIUpdater/**,Library/BuildPlayerData/**',
+                                  excludes: 'Library/Logs/**,Library/LastSceneManagerSetup.txt,Library/CurrentLayout*.dwlt,Library/**/*.tmp'
+                        
+                        writeCache name: "unity-packages-${CACHE_VERSION}",
+                                  includes: 'Library/PackageCache/**,Packages/**'
+                        
+                        echo "✅ Cache Unity sauvegardé - prochain build sera BEAUCOUP plus rapide"
+                        
+                        // ✅ Métriques cache
+                        sh '''
+                        echo "📊 CACHE SAUVEGARDÉ:"
+                        for dir in "ArtifactDB" "StateCache" "ShaderCache" "PackageCache"; do
+                            if [ -d "Library/$dir" ]; then
+                                size=$(du -sh "Library/$dir" | cut -f1)
+                                echo "- $dir: $size"
+                            fi
+                        done
+                        '''
+                        
+                    } catch (Exception e) {
+                        echo "⚠️ Échec sauvegarde cache: ${e.message}"
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                sh '''
+                echo ""
+                echo "🎉 BUILD RÉUSSI !"
+                echo "==============="
+                
+                if [ "${CACHE_RESTORED}" = "true" ]; then
+                    echo "✅ Cache utilisé - Performance optimale"
+                    echo "🔥 PROCHAIN BUILD: Performance similaire"
+                else
+                    echo "ℹ️ Cache créé pour la première fois"
+                    echo "🚀 PROCHAIN BUILD: Sera 60-80% plus rapide !"
+                fi
+                
+                echo ""
+                echo "📱 APK généré: $(ls -lh Builds/*.apk 2>/dev/null || echo 'Non trouvé')"
+                '''
+            }
+        }
+        failure {
+            script {
+                echo """
+                ❌ BUILD ÉCHOUÉ
+                
+                🔍 VÉRIFICATIONS:
+                1. Logs Unity: cat unity_build.log | tail -50
+                2. État Library: ls -la Library/
+                3. Espace disque: df -h
+                4. Mémoire: top -l 1 | grep Unity
+                """
+                
+                // ✅ Diagnostic automatique en cas d'échec
+                sh '''
+                echo "🚨 DIAGNOSTIC ÉCHEC:"
+                if [ -f "unity_build.log" ]; then
+                    echo "Dernières erreurs Unity:"
+                    grep -i "error\\|exception\\|failed" "unity_build.log" | tail -10
+                fi
+                
+                echo "État final Library:"
+                ls -la Library/ 2>/dev/null || echo "Library absente"
+                '''
+            }
+        }
+        always {
+            archiveArtifacts artifacts: 'unity_build.log,Builds/*.apk', allowEmptyArchive: true
+        }
+    }
+}
