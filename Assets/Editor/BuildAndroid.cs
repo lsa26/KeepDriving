@@ -1,114 +1,92 @@
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 using System.IO;
-using System.Collections.Generic;
-using UnityEditor.Build.Reporting;
 
 public class BuildAndroid
 {
-    [MenuItem("Build/Android")]
+    [MenuItem("Build/Android APK")]
     public static void Build()
     {
-        try 
+        Debug.Log("🚀 Starting Android build...");
+        
+        try
         {
-            Debug.Log("🚀 Starting Android build with CloudBees support...");
-            
-            // Détection du type de build
-            string buildType = System.Environment.GetEnvironmentVariable("BUILD_TYPE") ?? "Development";
-            Debug.Log($"Build Type: {buildType}");
-            
-            // Configuration des scènes
-            List<string> enabledScenes = new List<string>();
-            foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-            {
-                if (scene.enabled)
-                {
-                    enabledScenes.Add(scene.path);
-                    Debug.Log("Scene included: " + scene.path);
-                }
-            }
-            
-            if (enabledScenes.Count == 0)
-            {
-                Debug.Log("No active scenes found, looking for all scenes...");
-                string[] sceneGuids = AssetDatabase.FindAssets("t:scene");
-                foreach (string guid in sceneGuids)
-                {
-                    string scenePath = AssetDatabase.GUIDToAssetPath(guid);
-                    enabledScenes.Add(scenePath);
-                    Debug.Log("Scene added: " + scenePath);
-                }
-            }
-            
-            if (enabledScenes.Count == 0)
-            {
-                Debug.LogError("No scenes found for build!");
-                return;
-            }
-            
-            // Build directory
+            // Configuration du build
             string buildPath = Path.Combine(Directory.GetCurrentDirectory(), "Builds");
             if (!Directory.Exists(buildPath))
             {
                 Directory.CreateDirectory(buildPath);
             }
-                
+            
             string apkPath = Path.Combine(buildPath, "KeepDriving-CloudBees.apk");
-            Debug.Log("APK path: " + apkPath);
             
-            // Build options
-            BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-            buildPlayerOptions.scenes = enabledScenes.ToArray();
-            buildPlayerOptions.locationPathName = apkPath;
-            buildPlayerOptions.target = BuildTarget.Android;
-            
-            // Set build options based on build type
-            if (buildType == "Development")
-            {
-                buildPlayerOptions.options = BuildOptions.Development | BuildOptions.CompressWithLz4;
-                EditorUserBuildSettings.development = true;
-            }
-            else
-            {
-                buildPlayerOptions.options = BuildOptions.CompressWithLz4HC;
-                EditorUserBuildSettings.development = false;
-            }
-            
-            // Android settings optimisés pour CloudBees
-            PlayerSettings.Android.useCustomKeystore = false;
-            PlayerSettings.Android.bundleVersionCode = 1;
-            PlayerSettings.bundleVersion = "1.0";
-            PlayerSettings.companyName = "KeepDriving";
-            PlayerSettings.productName = "KeepDriving CloudBees";
-            
-            // Permission Internet pour CloudBees
-            PlayerSettings.Android.forceInternetPermission = true;
-            
+            // Configuration des paramètres Android
             EditorUserBuildSettings.buildAppBundle = false;
-            EditorUserBuildSettings.androidBuildSystem = AndroidBuildSystem.Gradle;
+            PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
             
-            // Build optimization
-            PlayerSettings.bakeCollisionMeshes = true;
-            PlayerSettings.stripUnusedMeshComponents = true;
+            // Paramètres CloudBees
+            string buildType = System.Environment.GetEnvironmentVariable("BUILD_TYPE") ?? "Development";
+            bool isDevelopment = buildType == "Development";
             
-            // Start the build
-            Debug.Log("🔨 Starting Android build...");
-            BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
-            BuildSummary summary = report.summary;
+            Debug.Log($"📋 Build Type: {buildType}");
+            Debug.Log($"📋 Development Build: {isDevelopment}");
             
-            if (summary.result == BuildResult.Succeeded)
+            // Options de build
+            BuildOptions buildOptions = BuildOptions.None;
+            if (isDevelopment)
             {
-                Debug.Log("✅ Build successful with CloudBees!");
-                Debug.Log($"Time: {summary.totalTime}, Size: {summary.totalSize} bytes");
+                buildOptions |= BuildOptions.Development;
+                buildOptions |= BuildOptions.AllowDebugging;
+            }
+            
+            // Scènes à inclure
+            string[] scenes = GetScenesFromBuildSettings();
+            
+            Debug.Log($"📋 Scenes to build: {scenes.Length}");
+            foreach (string scene in scenes)
+            {
+                Debug.Log($"  - {scene}");
+            }
+            
+            // Lancement du build
+            BuildReport report = BuildPipeline.BuildPlayer(
+                scenes,
+                apkPath,
+                BuildTarget.Android,
+                buildOptions
+            );
+            
+            // Vérification du résultat
+            if (report.summary.result == BuildResult.Succeeded)
+            {
+                long size = report.summary.totalSize;
+                Debug.Log($"✅ Build succeeded! APK size: {size / (1024 * 1024)} MB");
+                Debug.Log($"📦 APK location: {apkPath}");
             }
             else
             {
-                Debug.LogError($"❌ Build failed: {summary.result}");
+                Debug.LogError($"❌ Build failed with result: {report.summary.result}");
+                EditorApplication.Exit(1);
             }
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"Error during build: {ex}");
+            Debug.LogError($"❌ Build exception: {ex.Message}");
+            Debug.LogError($"Stack trace: {ex.StackTrace}");
+            EditorApplication.Exit(1);
         }
+    }
+    
+    private static string[] GetScenesFromBuildSettings()
+    {
+        EditorBuildSettingsScene[] buildSettingsScenes = EditorBuildSettings.scenes;
+        string[] scenes = new string[buildSettingsScenes.Length];
+        
+        for (int i = 0; i < buildSettingsScenes.Length; i++)
+        {
+            scenes[i] = buildSettingsScenes[i].path;
+        }
+        
+        return scenes;
     }
 }
