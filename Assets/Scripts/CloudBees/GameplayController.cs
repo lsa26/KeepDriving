@@ -1,128 +1,134 @@
 using UnityEngine;
-using KeepDriving.CloudBees;
 
-namespace KeepDriving
+namespace CloudBees
 {
-    /// <summary>
-    /// Contrôleur principal qui intègre CloudBees avec le gameplay existant
-    /// </summary>
     public class GameplayController : MonoBehaviour
     {
         [Header("Gameplay Settings")]
-        [SerializeField] private bool waitForCloudBees = true;
-        [SerializeField] private GameObject tutorialPanel;
-        [SerializeField] private GameObject nightModeOverlay;
+        [SerializeField] private GameObject[] powerUpPrefabs;
+        [SerializeField] private Transform[] enemySpawnPoints;
+        [SerializeField] private ParticleSystem[] specialEffects;
         
-        private bool gameStarted = false;
+        [Header("Game Speed")]
+        [SerializeField] private float baseGameSpeed = 1.0f;
+        
+        private bool powerUpsEnabled;
+        private int maxEnemies;
+        private float currentGameSpeed;
+        private bool specialEffectsEnabled;
+        private bool bonusRoundsEnabled;
+        
+        private int currentEnemyCount = 0;
 
         private void Start()
         {
-            if (waitForCloudBees)
+            InitializeGameplay();
+        }
+
+        private void InitializeGameplay()
+        {
+            if (CloudBeesManager.Instance == null)
             {
-                // Attendre CloudBees avant de démarrer le jeu
-                CloudBeesManager.OnFlagsReady += OnCloudBeesReady;
-                
-                if (CloudBeesManager.AreFeatureFlagsReady())
+                Debug.LogWarning("⚠️ CloudBeesManager not found, using default gameplay settings");
+                SetDefaultSettings();
+                return;
+            }
+
+            // Récupérer les paramètres CloudBees
+            powerUpsEnabled = CloudBeesManager.Instance.IsEnablePowerUps();
+            maxEnemies = CloudBeesManager.Instance.GetMaxEnemies();
+            currentGameSpeed = (float)CloudBeesManager.Instance.GetGameSpeed();
+            specialEffectsEnabled = CloudBeesManager.Instance.IsEnableSpecialEffects();
+            bonusRoundsEnabled = CloudBeesManager.Instance.IsEnableBonusRounds();
+
+            ApplyGameplaySettings();
+        }
+
+        private void SetDefaultSettings()
+        {
+            powerUpsEnabled = true;
+            maxEnemies = 5;
+            currentGameSpeed = 1.0f;
+            specialEffectsEnabled = true;
+            bonusRoundsEnabled = false;
+            
+            ApplyGameplaySettings();
+        }
+
+        private void ApplyGameplaySettings()
+        {
+            // Appliquer la vitesse de jeu
+            Time.timeScale = currentGameSpeed * baseGameSpeed;
+            
+            // Activer/désactiver les power-ups
+            foreach (GameObject powerUp in powerUpPrefabs)
+            {
+                if (powerUp != null)
                 {
-                    OnCloudBeesReady();
+                    powerUp.SetActive(powerUpsEnabled);
                 }
             }
-            else
-            {
-                StartGame();
-            }
-        }
-
-        private void OnCloudBeesReady()
-        {
-            Debug.Log("🎮 [Gameplay] CloudBees ready, configuring game...");
-            ConfigureGameWithFlags();
-            StartGame();
-        }
-
-        private void ConfigureGameWithFlags()
-        {
-            if (!CloudBeesManager.AreFeatureFlagsReady()) return;
-
-            var flags = CloudBeesManager.Flags;
-
-            // 1. Configuration du tutoriel
-            bool showTutorial = flags.enableTutorial.IsEnabled();
-            Debug.Log($"📚 Tutorial: {(showTutorial ? "ENABLED" : "DISABLED")}");
             
-            if (tutorialPanel != null)
+            // Activer/désactiver les effets spéciaux
+            foreach (ParticleSystem effect in specialEffects)
             {
-                tutorialPanel.SetActive(showTutorial);
+                if (effect != null)
+                {
+                    if (specialEffectsEnabled)
+                        effect.Play();
+                    else
+                        effect.Stop();
+                }
             }
 
-            // 2. Mode nuit
-            bool nightMode = flags.enableNightMode.IsEnabled();
-            Debug.Log($"🌙 Night Mode: {(nightMode ? "ENABLED" : "DISABLED")}");
-            
-            if (nightModeOverlay != null)
-            {
-                nightModeOverlay.SetActive(nightMode);
-            }
-
-            // 3. Vitesse maximale (peut être utilisée par votre CarController existant)
-            int maxSpeed = flags.maxSpeed.GetValue();
-            Debug.Log($"⚡ Max Speed: {maxSpeed} km/h");
-            
-            // Vous pouvez envoyer cette valeur à votre CarController
-            SendMaxSpeedToCarController(maxSpeed);
-
-            // 4. Consommation de carburant
-            double fuelMultiplier = flags.fuelConsumption.GetValue();
-            Debug.Log($"⛽ Fuel Consumption: {fuelMultiplier}x");
-            
-            // Vous pouvez ajuster la consommation de carburant
-            AdjustFuelConsumption(fuelMultiplier);
-
-            // 5. Nouveau modèle de voiture
-            bool newCarModel = flags.enableNewCarModel.IsEnabled();
-            Debug.Log($"🚗 New Car Model: {(newCarModel ? "UNLOCKED" : "LOCKED")}");
+            Debug.Log($"🎮 Gameplay Settings Applied:");
+            Debug.Log($"  - Power-ups: {powerUpsEnabled}");
+            Debug.Log($"  - Max Enemies: {maxEnemies}");
+            Debug.Log($"  - Game Speed: {currentGameSpeed}");
+            Debug.Log($"  - Special Effects: {specialEffectsEnabled}");
+            Debug.Log($"  - Bonus Rounds: {bonusRoundsEnabled}");
         }
 
-        private void StartGame()
+        // Méthodes publiques pour le contrôle du gameplay
+        public bool CanSpawnEnemy()
         {
-            if (gameStarted) return;
-            
-            gameStarted = true;
-            Debug.Log("🎮 [Gameplay] Game started!");
-            
-            // Ici vous pouvez démarrer votre logique de jeu existante
-            // Par exemple, activer votre CarController, UI, etc.
+            return currentEnemyCount < maxEnemies;
         }
 
-        private void SendMaxSpeedToCarController(int maxSpeed)
+        public void OnEnemySpawned()
         {
-            // Trouvez votre CarController existant et configurez la vitesse max
-            // Exemple :
-            // CarController carController = FindObjectOfType<CarController>();
-            // if (carController != null)
-            // {
-            //     carController.SetMaxSpeed(maxSpeed);
-            // }
-            
-            Debug.Log($"🚗 Configuring max speed: {maxSpeed}");
+            currentEnemyCount++;
         }
 
-        private void AdjustFuelConsumption(double multiplier)
+        public void OnEnemyDestroyed()
         {
-            // Ajustez la consommation de carburant selon le multiplier
-            // Exemple :
-            // FuelSystem fuelSystem = FindObjectOfType<FuelSystem>();
-            // if (fuelSystem != null)
-            // {
-            //     fuelSystem.SetConsumptionMultiplier((float)multiplier);
-            // }
-            
-            Debug.Log($"⛽ Adjusting fuel consumption: {multiplier}x");
+            currentEnemyCount = Mathf.Max(0, currentEnemyCount - 1);
         }
 
-        private void OnDestroy()
+        public bool ArePowerUpsEnabled()
         {
-            CloudBeesManager.OnFlagsReady -= OnCloudBeesReady;
+            return powerUpsEnabled;
+        }
+
+        public bool AreSpecialEffectsEnabled()
+        {
+            return specialEffectsEnabled;
+        }
+
+        public bool AreBonusRoundsEnabled()
+        {
+            return bonusRoundsEnabled;
+        }
+
+        public float GetCurrentGameSpeed()
+        {
+            return currentGameSpeed;
+        }
+
+        // Méthode pour rafraîchir les paramètres (utile si CloudBees est mis à jour en temps réel)
+        public void RefreshSettings()
+        {
+            InitializeGameplay();
         }
     }
 }
