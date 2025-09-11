@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using System.Threading.Tasks;
-// ✅ Décommentons les imports CloudBees
+// ✅ Namespaces pour rox-client (les vraies DLLs téléchargées)
 using Io.Rollout.Rox.Core;
 using Io.Rollout.Rox.Client.Flags;
 using Io.Rollout.Rox.Client;
@@ -10,12 +10,11 @@ namespace CloudBees
 {
     public class CloudBeesManager : MonoBehaviour
     {
-        // ✅ Décommentons le Container CloudBees
+        // ✅ Container avec les DLLs rox-client téléchargées
         public class Container : IRoxContainer
         {
-            public RoxString CarColor = new RoxString("red", new[] { "red", "blue", "green", "yellow" });
-            
-            // Gameplay flags
+            // ✅ Syntaxe rox-client (pas rox-server)
+            public RoxString CarColor = new RoxString("red", new string[] { "red", "blue", "green", "yellow" });
             public RoxFlag EnablePowerUps = new RoxFlag();
             public RoxInt MaxEnemies = new RoxInt(5);
             public RoxDouble GameSpeed = new RoxDouble(1.0);
@@ -29,7 +28,6 @@ namespace CloudBees
         [Header("CloudBees Configuration")]
         [SerializeField] private bool enableCloudBees = true;
         
-        // Variables par défaut pour fallback
         [Header("Default Values (fallback)")]
         public string defaultCarColor = "red";
         public bool defaultEnablePowerUps = true;
@@ -81,7 +79,6 @@ namespace CloudBees
 
             try
             {
-                // Récupération sécurisée de la clé
                 string apiKey = GetSecureApiKey();
                 
                 if (string.IsNullOrEmpty(apiKey))
@@ -93,22 +90,21 @@ namespace CloudBees
 
                 Debug.Log($"🔐 CloudBees: Initializing with key: {apiKey.Substring(0, Math.Min(8, apiKey.Length))}...");
 
-                // ✅ Réactivons CloudBees !
+                // ✅ Initialisation CloudBees avec rox-client
                 _container = new Container();
                 
-                // Enregistrer le container
+                // ✅ Register le container
                 await Rox.Register(_container);
                 
-                // Configuration options (optionnelle)
+                // ✅ Options pour rox-client
                 var options = new RoxOptions.Builder().Build();
 
-                // Initialiser CloudBees avec la clé
+                // ✅ Setup avec votre clé API
                 await Rox.Setup(apiKey, options);
                 
                 _isCloudBeesInitialized = true;
-                Debug.Log("✅ CloudBees initialisé avec succès!");
+                Debug.Log("✅ CloudBees (rox-client) initialisé avec succès!");
                 
-                // Logs de debug des valeurs actuelles
                 LogCurrentFeatureFlags();
             }
             catch (System.Exception ex)
@@ -125,7 +121,7 @@ namespace CloudBees
             
             try
             {
-                Debug.Log("🎯 Current Feature Flags:");
+                Debug.Log("🎯 Current CloudBees Feature Flags (rox-client):");
                 Debug.Log($"  - Car Color: {_container.CarColor.GetValue()}");
                 Debug.Log($"  - Power-ups: {_container.EnablePowerUps.IsEnabled()}");
                 Debug.Log($"  - Max Enemies: {_container.MaxEnemies.GetValue()}");
@@ -162,7 +158,7 @@ namespace CloudBees
             }
         }
 
-        // API publique avec vraies feature flags + fallback
+        // ✅ API publique avec vraies feature flags CloudBees rox-client
         public string GetCarColor()
         {
             if (_isCloudBeesInitialized && _container != null)
@@ -178,7 +174,6 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees CarColor error: {ex.Message}");
                 }
             }
-            Debug.Log($"🚗 Fallback Car Color: {defaultCarColor}");
             return defaultCarColor;
         }
 
@@ -197,7 +192,6 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees EnablePowerUps error: {ex.Message}");
                 }
             }
-            Debug.Log($"⚡ Fallback Power-ups: {defaultEnablePowerUps}");
             return defaultEnablePowerUps;
         }
 
@@ -216,7 +210,6 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees MaxEnemies error: {ex.Message}");
                 }
             }
-            Debug.Log($"👹 Fallback Max Enemies: {defaultMaxEnemies}");
             return defaultMaxEnemies;
         }
 
@@ -235,7 +228,6 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees GameSpeed error: {ex.Message}");
                 }
             }
-            Debug.Log($"🏃 Fallback Game Speed: {defaultGameSpeed}");
             return defaultGameSpeed;
         }
 
@@ -254,7 +246,6 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees EnableSpecialEffects error: {ex.Message}");
                 }
             }
-            Debug.Log($"✨ Fallback Special Effects: {defaultEnableSpecialEffects}");
             return defaultEnableSpecialEffects;
         }
 
@@ -273,22 +264,12 @@ namespace CloudBees
                     Debug.LogWarning($"⚠️ CloudBees EnableBonusRounds error: {ex.Message}");
                 }
             }
-            Debug.Log($"🎁 Fallback Bonus Rounds: {defaultEnableBonusRounds}");
             return defaultEnableBonusRounds;
         }
 
-        // Méthodes utilitaires
         public bool IsCloudBeesConnected()
         {
             return _isCloudBeesInitialized && _container != null;
-        }
-
-        public void RefreshFeatureFlags()
-        {
-            if (_isCloudBeesInitialized)
-            {
-                LogCurrentFeatureFlags();
-            }
         }
     }
 }
