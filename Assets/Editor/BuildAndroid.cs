@@ -69,7 +69,8 @@ public class BuildAndroid
             // Vérification du résultat
             if (report.summary.result == BuildResult.Succeeded)
             {
-                long size = report.summary.totalSize;
+                // ✅ CORRECTION ICI - utiliser ulong au lieu de long
+                ulong size = report.summary.totalSize;
                 Debug.Log($"✅ Build succeeded! APK size: {size / (1024 * 1024)} MB");
                 Debug.Log($"📦 APK location: {apkPath}");
                 Debug.Log($"⏱️ Build time: {report.summary.totalTime.TotalSeconds:F1} seconds");
