@@ -1,211 +1,194 @@
-using UnityEngine;
-using System.Threading.Tasks;
 using System;
-using Io.Rollout.Rox.Client;
-using Io.Rollout.Rox.Core.Entities;
-using Io.Rollout.Rox.Client.Flags;
+using UnityEngine;
+// Commentons temporairement les imports CloudBees pour compiler
+// using Io.Rollout.Rox.Core;
+// using Io.Rollout.Rox.Client.Flags;
 
-namespace KeepDriving.CloudBees
+namespace CloudBees
 {
-    /// <summary>
-    /// Conteneur des feature flags pour KeepDriving
-    /// </summary>
-    public class CarFlags : IRoxContainer 
-    {
-        public RoxString carColor = new RoxString("Blue", new string[] 
-        {
-            "Blue", "Red", "Green", "Yellow", "White", "Black", "Purple", "Orange"
-        });
-        
-        public RoxFlag enableTutorial = new RoxFlag(false);
-        public RoxInt maxSpeed = new RoxInt(120, new int[] {80, 100, 120, 150, 200});
-        public RoxDouble fuelConsumption = new RoxDouble(1.0, new double[] {0.5, 0.8, 1.0, 1.2, 1.5});
-        public RoxFlag enableNightMode = new RoxFlag(false);
-        public RoxFlag enableNewCarModel = new RoxFlag(false);
-    }
-
-    /// <summary>
-    /// Manager principal pour CloudBees Feature Flags avec sécurité renforcée
-    /// </summary>
     public class CloudBeesManager : MonoBehaviour
     {
-        [Header("CloudBees Configuration")]
-        [SerializeField] private string fallbackSdkKey = ""; // ⚠️ Laissez vide pour forcer l'usage de Resources
-        
-        [Header("Debug")]
-        [SerializeField] private bool enableDebugLogs = true;
-        [SerializeField] private bool forceOfflineMode = false;
-        
-        // Propriétés statiques
-        public static CarFlags Flags { get; private set; }
-        public static bool IsInitialized { get; private set; } = false;
-        public static CloudBeesManager Instance { get; private set; }
+        // Commentons temporairement la partie CloudBees pour permettre la compilation
+        /*
+        public class Container : IRoxContainer
+        {
+            public RoxString CarColor = new RoxString("red", new[] { "red", "blue", "green", "yellow" });
+            
+            // Gameplay flags
+            public RoxFlag EnablePowerUps = new RoxFlag();
+            public RoxInt MaxEnemies = new RoxInt(5);
+            public RoxDouble GameSpeed = new RoxDouble(1.0);
+            public RoxFlag EnableSpecialEffects = new RoxFlag();
+            public RoxFlag EnableBonusRounds = new RoxFlag();
+        }
 
-        // Events
-        public static event System.Action OnFlagsReady;
-        public static event System.Action<string> OnCarColorChanged;
+        private Container _container;
+        */
+
+        [Header("CloudBees Configuration")]
+        [SerializeField] private bool enableCloudBees = true;
+        
+        // Variables par défaut pour remplacer CloudBees temporairement
+        [Header("Default Values (when CloudBees disabled)")]
+        public string defaultCarColor = "red";
+        public bool defaultEnablePowerUps = true;
+        public int defaultMaxEnemies = 5;
+        public double defaultGameSpeed = 1.0;
+        public bool defaultEnableSpecialEffects = true;
+        public bool defaultEnableBonusRounds = false;
+
+        private static CloudBeesManager _instance;
+        public static CloudBeesManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = FindObjectOfType<CloudBeesManager>();
+                    if (_instance == null)
+                    {
+                        GameObject go = new GameObject("CloudBeesManager");
+                        _instance = go.AddComponent<CloudBeesManager>();
+                        DontDestroyOnLoad(go);
+                    }
+                }
+                return _instance;
+            }
+        }
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
+            if (_instance == null)
             {
-                Destroy(gameObject);
-                return;
-            }
-            
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        private void Start()
-        {
-            if (!forceOfflineMode)
-            {
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
                 InitializeCloudBees();
             }
-            else
+            else if (_instance != this)
             {
-                InitializeOfflineMode();
+                Destroy(gameObject);
             }
         }
 
-        private async void InitializeCloudBees()
+        private void InitializeCloudBees()
         {
+            if (!enableCloudBees)
+            {
+                Debug.Log("🔧 CloudBees désactivé - utilisation des valeurs par défaut");
+                return;
+            }
+
             try
             {
-                Log("🚀 Initializing CloudBees Feature Flags...");
+                // Récupération sécurisée de la clé
+                string apiKey = GetSecureApiKey();
                 
-                // 🔐 Récupérer la SDK key de manière sécurisée
-                string sdkKey = LoadSecureSDKKey();
-                
-                if (string.IsNullOrEmpty(sdkKey))
+                if (string.IsNullOrEmpty(apiKey))
                 {
-                    Log("❌ No SDK key found, switching to offline mode");
-                    InitializeOfflineMode();
+                    Debug.LogWarning("⚠️ CloudBees API Key manquante - mode dégradé activé");
+                    enableCloudBees = false;
                     return;
                 }
-                
-                // Créer le conteneur de flags
-                Flags = new CarFlags();
-                
-                // Enregistrer le conteneur
-                Rox.Register("", Flags);
-                
-                // Configuration options
-                var options = new RoxOptions(new RoxOptions.RoxOptionsBuilder {});
-                
-                // Setup avec la clé SDK sécurisée
-                await Rox.Setup(sdkKey, options);
 
-                IsInitialized = true;
-                Log("✅ CloudBees initialized successfully!");
+                // TODO: Réactiver quand CloudBees SDK sera correctement installé
+                /*
+                _container = new Container();
                 
-                LogAllFlags();
-                OnFlagsReady?.Invoke();
+                var options = new RoxOptions
+                {
+                    DevModeSecret = apiKey
+                };
+
+                Rox.Setup(apiKey, options).ContinueWith(task =>
+                {
+                    if (task.Exception != null)
+                    {
+                        Debug.LogError($"❌ CloudBees initialization failed: {task.Exception.Message}");
+                        enableCloudBees = false;
+                    }
+                    else
+                    {
+                        Debug.Log("✅ CloudBees initialisé avec succès!");
+                    }
+                });
+                */
+                
+                Debug.Log("🔧 CloudBees en mode simulation");
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                Debug.LogError($"❌ CloudBees initialization failed: {ex.Message}");
-                InitializeOfflineMode();
+                Debug.LogError($"❌ Erreur CloudBees: {ex.Message}");
+                enableCloudBees = false;
             }
         }
 
-        /// <summary>
-        /// 🔐 Charge la SDK key de manière sécurisée depuis Resources
-        /// </summary>
-        private string LoadSecureSDKKey()
+        private string GetSecureApiKey()
         {
             try
             {
-                // 1. Essayer de charger depuis Resources (Jenkins)
                 TextAsset keyAsset = Resources.Load<TextAsset>("cloudbees_key");
-                if (keyAsset != null && !string.IsNullOrEmpty(keyAsset.text))
-                {
-                    Log("🔐 SDK key loaded securely from Resources");
-                    return keyAsset.text.Trim();
-                }
-                
-                // 2. Fallback vers la clé configurée dans l'Inspector (développement local)
-                if (!string.IsNullOrEmpty(fallbackSdkKey))
-                {
-                    Log("🔧 Using fallback SDK key from Inspector (dev mode)");
-                    return fallbackSdkKey;
-                }
-                
-                // 3. Aucune clé trouvée
-                Log("⚠️ No SDK key found in Resources or fallback");
-                return null;
+                return keyAsset?.text?.Trim();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
-                Debug.LogError($"❌ Error loading SDK key: {ex.Message}");
+                Debug.LogError($"❌ Erreur lecture clé CloudBees: {ex.Message}");
                 return null;
             }
         }
 
-        private void InitializeOfflineMode()
+        // API publique avec fallback
+        public string GetCarColor()
         {
-            Log("🔧 Initializing offline mode with default values...");
-            
-            Flags = new CarFlags();
-            IsInitialized = true;
-            
-            Log("✅ Offline mode initialized!");
-            LogAllFlags();
-            OnFlagsReady?.Invoke();
-        }
-
-        private void LogAllFlags()
-        {
-            if (!IsInitialized || Flags == null) return;
-
-            Log("🎯 Current Feature Flag Values:");
-            Log($"  🚗 Car Color: {Flags.carColor.GetValue()}");
-            Log($"  📚 Enable Tutorial: {Flags.enableTutorial.IsEnabled()}");
-            Log($"  ⚡ Max Speed: {Flags.maxSpeed.GetValue()} km/h");
-            Log($"  ⛽ Fuel Consumption: {Flags.fuelConsumption.GetValue()}x");
-            Log($"  🌙 Night Mode: {Flags.enableNightMode.IsEnabled()}");
-            Log($"  🆕 New Car Model: {Flags.enableNewCarModel.IsEnabled()}");
-        }
-
-        private void Log(string message)
-        {
-            if (enableDebugLogs)
+            if (enableCloudBees)
             {
-                Debug.Log($"[CloudBees] {message}");
+                // TODO: return _container?.CarColor?.GetValue() ?? defaultCarColor;
             }
+            return defaultCarColor;
         }
 
-        // Méthodes utilitaires publiques
-        public static bool AreFeatureFlagsReady()
+        public bool IsEnablePowerUps()
         {
-            return IsInitialized && Flags != null;
-        }
-
-        public static string GetCarColor()
-        {
-            return AreFeatureFlagsReady() ? Flags.carColor.GetValue() : "Blue";
-        }
-
-        public static void NotifyCarColorChanged(string newColor)
-        {
-            OnCarColorChanged?.Invoke(newColor);
-        }
-
-        [ContextMenu("Refresh All Flags")]
-        public void RefreshFlags()
-        {
-            if (IsInitialized)
+            if (enableCloudBees)
             {
-                LogAllFlags();
+                // TODO: return _container?.EnablePowerUps?.IsEnabled() ?? defaultEnablePowerUps;
             }
+            return defaultEnablePowerUps;
         }
 
-        [ContextMenu("Force Reinitialize")]
-        public void ForceReinitialize()
+        public int GetMaxEnemies()
         {
-            IsInitialized = false;
-            InitializeCloudBees();
+            if (enableCloudBees)
+            {
+                // TODO: return _container?.MaxEnemies?.GetValue() ?? defaultMaxEnemies;
+            }
+            return defaultMaxEnemies;
+        }
+
+        public double GetGameSpeed()
+        {
+            if (enableCloudBees)
+            {
+                // TODO: return _container?.GameSpeed?.GetValue() ?? defaultGameSpeed;
+            }
+            return defaultGameSpeed;
+        }
+
+        public bool IsEnableSpecialEffects()
+        {
+            if (enableCloudBees)
+            {
+                // TODO: return _container?.EnableSpecialEffects?.IsEnabled() ?? defaultEnableSpecialEffects;
+            }
+            return defaultEnableSpecialEffects;
+        }
+
+        public bool IsEnableBonusRounds()
+        {
+            if (enableCloudBees)
+            {
+                // TODO: return _container?.EnableBonusRounds?.IsEnabled() ?? defaultEnableBonusRounds;
+            }
+            return defaultEnableBonusRounds;
         }
     }
 }
