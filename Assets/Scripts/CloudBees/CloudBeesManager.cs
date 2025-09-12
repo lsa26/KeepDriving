@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine.Networking; // Ajouté pour UnityWebRequest
 
 // Conditional compilation pour les vrais namespaces
