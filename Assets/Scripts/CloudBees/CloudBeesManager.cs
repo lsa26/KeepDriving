@@ -22,6 +22,9 @@ namespace CloudBees
 {
     public class CloudBeesManager : MonoBehaviour
     {
+        // Variable pour suivre si le SDK réel est disponible
+        private bool _realSdkAvailable = false;
+        
         // Classes de fallback si rox-server n'est pas disponible
 #if !CLOUDBEES_SERVER_AVAILABLE
         public interface IRoxContainer { }
@@ -250,39 +253,50 @@ namespace CloudBees
             #if CLOUDBEES_SERVER_AVAILABLE
                 Debug.Log("✅ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE ACTIVE - Mode réel");
                 // Vérifier si les DLLs sont correctement chargées
-                bool sdkFound = false;
+                _realSdkAvailable = false;
                 try {
                     // Essai avec le namespace original
                     try {
                         var test1 = typeof(Io.Rollout.Rox.Server.RoxOptions);
                         Debug.Log($"✅ CloudBees SDK trouvé (Io.Rollout): {test1.Assembly.FullName}");
-                        sdkFound = true;
-                    } catch {}
+                        _realSdkAvailable = true;
+                    } catch (Exception e1) {
+                        Debug.Log($"Namespace Io.Rollout.Rox non trouvé: {e1.Message}");
+                    }
                     
                     // Essai avec Rollout.Rox
-                    try {
-                        var test2 = typeof(Rollout.Rox.RoxOptions);
-                        Debug.Log($"✅ CloudBees SDK trouvé (Rollout.Rox): {test2.Assembly.FullName}");
-                        sdkFound = true;
-                    } catch {}
+                    if (!_realSdkAvailable) {
+                        try {
+                            var test2 = typeof(Rollout.Rox.RoxOptions);
+                            Debug.Log($"✅ CloudBees SDK trouvé (Rollout.Rox): {test2.Assembly.FullName}");
+                            _realSdkAvailable = true;
+                        } catch (Exception e2) {
+                            Debug.Log($"Namespace Rollout.Rox non trouvé: {e2.Message}");
+                        }
+                    }
                     
                     // Essai avec Rox
-                    try {
-                        var test3 = typeof(Rox.Server.RoxOptions);
-                        Debug.Log($"✅ CloudBees SDK trouvé (Rox.Server): {test3.Assembly.FullName}");
-                        sdkFound = true;
-                    } catch {}
+                    if (!_realSdkAvailable) {
+                        try {
+                            var test3 = typeof(Rox.Server.RoxOptions);
+                            Debug.Log($"✅ CloudBees SDK trouvé (Rox.Server): {test3.Assembly.FullName}");
+                            _realSdkAvailable = true;
+                        } catch (Exception e3) {
+                            Debug.Log($"Namespace Rox.Server non trouvé: {e3.Message}");
+                        }
+                    }
                     
-                    if (!sdkFound) {
+                    if (!_realSdkAvailable) {
                         throw new Exception("Aucun namespace compatible trouvé");
                     }
                 } catch (Exception e) {
                     Debug.LogError($"❌ CloudBees SDK introuvable malgré la directive: {e.Message}");
                     Debug.Log("⚠️ Passage en mode simulation forcé");
-                    #undef CLOUDBEES_SERVER_AVAILABLE
+                    _realSdkAvailable = false;
                 }
             #else
                 Debug.Log("❌ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE NON ACTIVE - Mode simulation");
+                _realSdkAvailable = false;
             #endif
 
             // DIAGNOSTIC: Test de connectivité réseau
@@ -316,11 +330,11 @@ namespace CloudBees
                 
                 _isCloudBeesInitialized = true;
                 
-#if CLOUDBEES_SERVER_AVAILABLE
-                Debug.Log("✅ CloudBees rox-server REAL SDK initialized successfully!");
-#else
-                Debug.Log("✅ CloudBees rox-server SIMULATION initialized successfully!");
-#endif
+                if (_realSdkAvailable) {
+                    Debug.Log("✅ CloudBees rox-server REAL SDK initialized successfully!");
+                } else {
+                    Debug.Log("✅ CloudBees rox-server SIMULATION initialized successfully!");
+                }
                 
                 LogCurrentFeatureFlags();
             }
@@ -358,11 +372,12 @@ namespace CloudBees
             
             try
             {
-#if CLOUDBEES_SERVER_AVAILABLE
-                Debug.Log("🎯 Current Feature Flags (rox-server REAL):");
-#else
-                Debug.Log("🎯 Current Feature Flags (rox-server SIMULATION):");
-#endif
+                if (_realSdkAvailable) {
+                    Debug.Log("🎯 Current Feature Flags (rox-server REAL):");
+                } else {
+                    Debug.Log("🎯 Current Feature Flags (rox-server SIMULATION):");
+                }
+                
                 Debug.Log($"  - Tutorial: {_flags.enableTutorial.IsEnabled()}");
                 Debug.Log($"  - Car Color: {_flags.CarColor.GetValue()}");
                 Debug.Log($"  - Power-ups: {_flags.EnablePowerUps.IsEnabled()}");
