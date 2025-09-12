@@ -2,10 +2,17 @@ using System;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Collections;
-using UnityEngine.Networking; // Ajouté pour UnityWebRequest
+using UnityEngine.Networking;
+using System.Reflection;
 
-// Conditional compilation pour les vrais namespaces
+// Essayons différents namespaces possibles pour le SDK CloudBees
 #if CLOUDBEES_SERVER_AVAILABLE
+// Tentative avec différents namespaces possibles - nous les essaierons tous
+using Rollout.Rox;
+using Rollout.Rox.Server;
+using Rox.Server;
+using Rox.Core;
+// Conservons aussi les originaux au cas où
 using Io.Rollout.Rox.Server;
 using Io.Rollout.Rox.Core.Entities;
 using Io.Rollout.Rox.Server.Flags;
@@ -183,6 +190,8 @@ namespace CloudBees
             // Test des directives de compilation
             #if CLOUDBEES_SERVER_AVAILABLE
                 Debug.Log("✅ CLOUDBEES_SERVER_AVAILABLE défini - Mode réel devrait être actif");
+                // Analyser les assemblies pour trouver les namespaces CloudBees
+                InspectCloudBeesSDK();
             #else
                 Debug.Log("❌ CLOUDBEES_SERVER_AVAILABLE NON défini - Mode simulation sera utilisé");
             #endif
@@ -192,6 +201,40 @@ namespace CloudBees
             {
                 Debug.Log("⚠️ CloudBees n'était pas initialisé dans Awake, tentative dans Start");
                 InitializeCloudBees();
+            }
+        }
+
+        private void InspectCloudBeesSDK()
+        {
+            Debug.Log("🔍 Inspection du SDK CloudBees...");
+            try {
+                Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                Debug.Log($"Assemblies chargées: {assemblies.Length}");
+                
+                foreach (var assembly in assemblies)
+                {
+                    string name = assembly.GetName().Name;
+                    if (name.ToLower().Contains("rox") || name.ToLower().Contains("rollout") || name.ToLower().Contains("cloudbees"))
+                    {
+                        Debug.Log($"📦 SDK potentiel trouvé: {name}");
+                        try {
+                            Type[] types = assembly.GetTypes();
+                            Debug.Log($"   Types trouvés: {types.Length}");
+                            
+                            foreach (var type in types)
+                            {
+                                if (type.Name.Contains("Rox") || type.Name.Contains("Flag"))
+                                {
+                                    Debug.Log($"   🔍 Type trouvé: {type.FullName} dans {type.Namespace}");
+                                }
+                            }
+                        } catch (Exception ex) {
+                            Debug.LogWarning($"⚠️ Erreur lors de l'analyse de {name}: {ex.Message}");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                Debug.LogError($"❌ Erreur lors de l'inspection: {e.Message}");
             }
         }
 
@@ -206,15 +249,40 @@ namespace CloudBees
             // DIAGNOSTIC: Vérifie le symbole de compilation et les assemblies
             #if CLOUDBEES_SERVER_AVAILABLE
                 Debug.Log("✅ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE ACTIVE - Mode réel");
-                // Tester si les DLLs sont correctement chargées
+                // Vérifier si les DLLs sont correctement chargées
+                bool sdkFound = false;
                 try {
-                    var assemblyTest = typeof(Io.Rollout.Rox.Server.RoxOptions);
-                    Debug.Log($"✅ CloudBees SDK trouvé: {assemblyTest.Assembly.FullName}");
+                    // Essai avec le namespace original
+                    try {
+                        var test1 = typeof(Io.Rollout.Rox.Server.RoxOptions);
+                        Debug.Log($"✅ CloudBees SDK trouvé (Io.Rollout): {test1.Assembly.FullName}");
+                        sdkFound = true;
+                    } catch {}
+                    
+                    // Essai avec Rollout.Rox
+                    try {
+                        var test2 = typeof(Rollout.Rox.RoxOptions);
+                        Debug.Log($"✅ CloudBees SDK trouvé (Rollout.Rox): {test2.Assembly.FullName}");
+                        sdkFound = true;
+                    } catch {}
+                    
+                    // Essai avec Rox
+                    try {
+                        var test3 = typeof(Rox.Server.RoxOptions);
+                        Debug.Log($"✅ CloudBees SDK trouvé (Rox.Server): {test3.Assembly.FullName}");
+                        sdkFound = true;
+                    } catch {}
+                    
+                    if (!sdkFound) {
+                        throw new Exception("Aucun namespace compatible trouvé");
+                    }
                 } catch (Exception e) {
                     Debug.LogError($"❌ CloudBees SDK introuvable malgré la directive: {e.Message}");
+                    Debug.Log("⚠️ Passage en mode simulation forcé");
+                    #undef CLOUDBEES_SERVER_AVAILABLE
                 }
             #else
-                Debug.LogError("❌ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE NON ACTIVE - Mode simulation");
+                Debug.Log("❌ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE NON ACTIVE - Mode simulation");
             #endif
 
             // DIAGNOSTIC: Test de connectivité réseau
