@@ -176,6 +176,25 @@ namespace CloudBees
             }
         }
 
+        private void Start()
+        {
+            Debug.Log("🔍 CloudBeesManager Start() - Test de démarrage");
+            
+            // Test des directives de compilation
+            #if CLOUDBEES_SERVER_AVAILABLE
+                Debug.Log("✅ CLOUDBEES_SERVER_AVAILABLE défini - Mode réel devrait être actif");
+            #else
+                Debug.Log("❌ CLOUDBEES_SERVER_AVAILABLE NON défini - Mode simulation sera utilisé");
+            #endif
+            
+            // Forcer l'initialisation si pas encore fait
+            if (!_isCloudBeesInitialized)
+            {
+                Debug.Log("⚠️ CloudBees n'était pas initialisé dans Awake, tentative dans Start");
+                InitializeCloudBees();
+            }
+        }
+
         private async void InitializeCloudBees()
         {
             if (!enableCloudBees)
@@ -294,28 +313,29 @@ namespace CloudBees
         {
             try
             {
-                // Essaie d'abord sans extension (comme avant)
-                TextAsset keyAsset = Resources.Load<TextAsset>("cloudbees_key");
+                Debug.Log("🔑 Recherche du fichier de clé CloudBees...");
                 
-                // Si null, essaie avec extension .txt (comme créé par Jenkins)
+                // Essayer avec et sans extension .txt
+                TextAsset keyAsset = Resources.Load<TextAsset>("cloudbees_key");
                 if (keyAsset == null)
                 {
-                    Debug.Log("📝 'cloudbees_key' non trouvé, essai avec 'cloudbees_key.txt'...");
+                    Debug.Log("📝 'cloudbees_key' non trouvé, essai avec 'cloudbees_key.txt'");
                     keyAsset = Resources.Load<TextAsset>("cloudbees_key.txt");
+                }
+                
+                // Liste tous les fichiers dans Resources pour diagnostic
+                var resourcesInfo = Resources.LoadAll("");
+                Debug.Log($"📁 {resourcesInfo.Length} ressources trouvées dans le dossier Resources:");
+                foreach (var res in resourcesInfo)
+                {
+                    Debug.Log($"   - {res.name} ({res.GetType().Name})");
                 }
                 
                 string key = keyAsset?.text?.Trim();
                 
                 if (string.IsNullOrEmpty(key))
                 {
-                    // Liste tous les fichiers dans Resources pour aider au diagnostic
-                    Debug.LogError("❌ CloudBees key is empty or null, vérification des ressources disponibles...");
-                    var resourcesInfo = Resources.LoadAll("");
-                    Debug.Log($"📁 {resourcesInfo.Length} ressources trouvées dans le dossier Resources:");
-                    foreach (var res in resourcesInfo)
-                    {
-                        Debug.Log($"   - {res.name} ({res.GetType().Name})");
-                    }
+                    Debug.LogError("❌ CloudBees key is empty or null");
                     return null;
                 }
                 
