@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine.Networking; // Ajouté pour UnityWebRequest
 
 // Conditional compilation pour les vrais namespaces
 #if CLOUDBEES_SERVER_AVAILABLE
@@ -182,8 +183,26 @@ namespace CloudBees
                 return;
             }
 
+            // DIAGNOSTIC: Vérifie le symbole de compilation et les assemblies
+            #if CLOUDBEES_SERVER_AVAILABLE
+                Debug.Log("✅ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE ACTIVE - Mode réel");
+                // Tester si les DLLs sont correctement chargées
+                try {
+                    var assemblyTest = typeof(Io.Rollout.Rox.Server.RoxOptions);
+                    Debug.Log($"✅ CloudBees SDK trouvé: {assemblyTest.Assembly.FullName}");
+                } catch (Exception e) {
+                    Debug.LogError($"❌ CloudBees SDK introuvable malgré la directive: {e.Message}");
+                }
+            #else
+                Debug.LogError("❌ DIRECTIVE CLOUDBEES_SERVER_AVAILABLE NON ACTIVE - Mode simulation");
+            #endif
+
+            // DIAGNOSTIC: Test de connectivité réseau
+            StartCoroutine(TestConnectivity());
+
             try
             {
+                // Recherche du fichier de clé avec diagnostic amélioré
                 string apiKey = GetSecureApiKey();
                 
                 if (string.IsNullOrEmpty(apiKey))
@@ -225,6 +244,26 @@ namespace CloudBees
             }
         }
 
+        // DIAGNOSTIC: Test de connectivité réseau
+        private IEnumerator TestConnectivity() 
+        {
+            Debug.Log("🔍 Test de connectivité CloudBees en cours...");
+            
+            using (UnityWebRequest www = UnityWebRequest.Get("https://api.cloudbees.io/v1/status")) 
+            {
+                yield return www.SendWebRequest();
+                
+                if (www.result == UnityWebRequest.Result.Success) 
+                {
+                    Debug.Log("✅ Connectivité Internet OK: " + www.downloadHandler.text);
+                } 
+                else 
+                {
+                    Debug.LogError($"❌ Problème de connectivité: {www.error}");
+                }
+            }
+        }
+
         private void LogCurrentFeatureFlags()
         {
             if (!_isCloudBeesInitialized || _flags == null) return;
@@ -254,12 +293,28 @@ namespace CloudBees
         {
             try
             {
+                // Essaie d'abord sans extension (comme avant)
                 TextAsset keyAsset = Resources.Load<TextAsset>("cloudbees_key");
+                
+                // Si null, essaie avec extension .txt (comme créé par Jenkins)
+                if (keyAsset == null)
+                {
+                    Debug.Log("📝 'cloudbees_key' non trouvé, essai avec 'cloudbees_key.txt'...");
+                    keyAsset = Resources.Load<TextAsset>("cloudbees_key.txt");
+                }
+                
                 string key = keyAsset?.text?.Trim();
                 
                 if (string.IsNullOrEmpty(key))
                 {
-                    Debug.LogError("❌ CloudBees key is empty or null");
+                    // Liste tous les fichiers dans Resources pour aider au diagnostic
+                    Debug.LogError("❌ CloudBees key is empty or null, vérification des ressources disponibles...");
+                    var resourcesInfo = Resources.LoadAll("");
+                    Debug.Log($"📁 {resourcesInfo.Length} ressources trouvées dans le dossier Resources:");
+                    foreach (var res in resourcesInfo)
+                    {
+                        Debug.Log($"   - {res.name} ({res.GetType().Name})");
+                    }
                     return null;
                 }
                 
